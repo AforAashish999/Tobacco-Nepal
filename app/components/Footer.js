@@ -9,7 +9,7 @@ export default function Footer() {
     <div className='min-h-screen'>
 
                 {/* FIRST FOOTER */}
-            <div className='bg-stone-800 py-25 space-y-10'>
+            <div className='bg-[#211F1B] py-25 space-y-10'>
 
                 <div className="flex flex-col items-center  space-y-7">
                <h1 className="text-5xl font-bold text-[#d4a56b]"> Get In Touch</h1>

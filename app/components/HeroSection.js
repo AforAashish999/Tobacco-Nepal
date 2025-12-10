@@ -30,20 +30,20 @@ export default function HeroSection() {
 
       {/* content */}
       <div className="absolute z-30 h-screen w-screen flex flex-col items-center justify-center space-y-6">
-      <h1 className="  text-6xl font-bold text-orange-300  ">
+      <h1 className="  text-7xl font-bold text-[#DF954E] ">
         Premium Tobacco
       </h1>
-    <p className="text-2xl font-bold text-yellow-100 max-w-3xl text-center tracking-wide">
+    <p className="text-2xl font-bold text-[#F7E2A2] max-w-3xl text-center tracking-wide">
       Experience the finest quality tobacco products . Our traditional methods and sustainable practices ensure 
       exceptional quality in every product.
     </p>
 
     <div className="flex items-center space-x-4 mt-7">
     <Link href="/products"
-    className="bg-yellow-400 px-5 py-2 text-xl font-bold rounded-md hover:bg-yellow-300">
+    className="bg-[#EAB308] px-5 py-2 text-xl font-bold rounded-md hover:bg-yellow-300">
       View Products</Link>
     <Link href="/about"
-    className="border-white border text-white bg-black px-7 py-2 font-semibold rounded-md hover:bg-neutral-700 "
+    className="border-white border text-white bg-black px-7 py-2 font-bold rounded-md hover:bg-neutral-700 "
     > Learn More </Link>
 
     </div>
