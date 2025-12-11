@@ -19,10 +19,12 @@ export default async function FeatureProducts() {
         </div>
 
         {/* PRODUCT GRID */}
-        <div className=" p-5 grid grid-cols-5 gap-x-4 mt-5  "> 
+        <div
+        className=" p-5 grid grid-cols-5 gap-x-4 mt-5  "> 
         {
+          // individual products
             filteredProducts.map((product) => (
-                <div
+                <Link href={`/product/${product.id}`}
                 className=" bg-[#111111]  h-90 rounded-xl flex flex-col justify-between
                  hover:transition hover:duration-500 hover:border-orange-300/50 hover:border cursor-pointer "
                  key={product.id}>
@@ -35,7 +37,7 @@ export default async function FeatureProducts() {
                   <p className="line-clamp-2 text-center text-[#D2863C] tracking-wide">  {product.description}</p>
                   </div>
 
-                    </div>
+                    </Link>
 
             ))
             
