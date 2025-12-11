@@ -18,12 +18,12 @@
 // }
 
 import Image from "next/image";
-import HeroImage from "../../public/heroSectionImage.jpg";
+// import HeroImage from "../../public/heroSectionImage.jpg";
 import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <div className="h-screen w-full 
+    <div className="h-screen w-full relative
     bg-[url('/heroSectionImage.jpg')] bg-cover bg-center ">
         <div className='h-screen w-screen bg-black/75 z-10 absolute backdrop-blur-sm '></div>
    

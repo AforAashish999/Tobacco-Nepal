@@ -4,11 +4,17 @@ import { LuMessageCircle } from "react-icons/lu";
 import { TiArrowLeft } from "react-icons/ti";
 import Image from "next/image";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export default async function page({ params }) {
     const { productId } = await params;
     const response = await fetch(`${process.env.API_URL}/products`);
-    if (!response.ok) throw new Error("Failed to fetch")
+
+    //good practice
+    if (!response.ok) {
+        console.error(" Aashish Error", response.status, response.statusText)
+        throw new Error("Failed to fetch")
+    }
     const data = await response.json();
 
     const filteredProduct = data.find((item) => item.id == productId);
@@ -68,7 +74,13 @@ export default async function page({ params }) {
             <div className={styles.similarProducts} >
 
                 <div className={styles.smHeadDiv} >
+                    <div className={styles.secondHeaderDiv} >
                     <h1 className={styles.smHeading}> Similar Products </h1>
+                    <div className={styles.link} >
+                        <FaExternalLinkAlt className="text-xs" />
+
+                    </div>
+                    </div>
                     <Link href="/product" className={styles.smArrow} >
                         <p> View ALL </p>
                         <MdOutlineArrowRightAlt className={styles.smArrowIcon} />
@@ -79,10 +91,15 @@ export default async function page({ params }) {
                 <div className={styles.similarOuterDiv} >
                     {
                         similarProducts.map((sm) => (
-                            <Link href={`/product/${sm.id}`} key={sm.id} className={styles.smProductDiv}  >
-
-                                <Image src={sm.images} alt="images" width={280} height={255}
+                            <Link href={`/product/${sm.id}`} key={sm.id}
+                             className={styles.smProductDiv}  >
+                                    <div className={styles.innerImgOuterDiv} >
+                                <Image
+                                 src={sm.images}
+                                  alt="images" width={255} height={100}
                                     className={styles.innerImgDiv} />
+
+                                    </div>
 
                                 <div className={styles.smdesc} >
                                     <h1 className={styles.innerName} > {sm.name} </h1>

@@ -1,7 +1,9 @@
-import React from 'react'
+import ProductHeroSection from "./components/ProductHeroSection"
 
 export default function ProductPage() {
   return (
-    <div>ProductPage</div>
+    <div>
+      <ProductHeroSection />
+    </div>
   )
 }
