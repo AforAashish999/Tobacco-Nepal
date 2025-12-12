@@ -25,7 +25,7 @@ export default function HeroSection() {
   return (
     <div className="h-screen w-full relative
     bg-[url('/heroSectionImage.jpg')] bg-cover bg-center ">
-        <div className='h-screen w-screen bg-black/75 z-10 absolute backdrop-blur-sm '></div>
+        <div className='h-screen w-screen bg-black/73 z-10 absolute backdrop-blur-sm '></div>
    
 
       {/* content */}

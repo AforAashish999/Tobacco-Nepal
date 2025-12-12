@@ -43,7 +43,7 @@ export default function NavBar() {
               <Image
                 src={Logo}
                 alt="Tobacco Nepal Logo"
-                className="w-27 h-14"
+                className="w-27 h-14 hover:scale-105"
               />
             </Link>
 
