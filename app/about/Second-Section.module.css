@@ -1,0 +1,76 @@
+.main{
+    background-color: black;
+    padding: 80px 0;
+}
+.company{
+    height: 80vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    /* padding: 80px 0; */
+}
+.company__description{
+    padding: 0 24px;
+}
+.company__title{
+    font-size: 48px;
+    color: #EAB308;
+    font-weight: bolder;
+    margin-bottom: 32px;
+    text-align: center;
+}
+.company__para1{
+    color: var(--color-gray-300);
+    font-size: 18px;
+    margin-bottom: 24px;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    word-spacing: 4px;
+}
+.company__para1--highlight{
+ color: var(--color-gray-300);
+    font-weight: 800;
+    text-decoration: underline;
+}
+.company__para2{
+    color: var(--color-gray-300);
+    font-size: 18px;
+    margin-bottom: 24px;
+     font-weight: 500;
+    letter-spacing: 0.025em;
+    word-spacing: 4px;
+}
+.company__para3{
+    color: var(--color-gray-300);
+    font-size: 18px;
+     font-weight: 500;
+    letter-spacing: 0.025em;
+    word-spacing: 4px;
+}
+.company__imageWrapper{
+    /* background-color: aqua; */
+    /* padding: 10px; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    padding-top: 22px;
+}
+.company__image{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.secondSection__endText{
+    font-size: 20px;
+    color: white;
+    padding-top: 40px;
+    font-weight: bold;
+  background-color: black;
+  text-align: center;
+}
+
+/* ✅ Rule of thumb
+
+When your CSS class contains - or --, always use styles['class-name'] in JSX.
+
+Otherwise, styles.className only works for plain names like secondSection or second-section */

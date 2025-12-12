@@ -1,7 +1,13 @@
-import React from 'react'
+import StoryHeroSection from './HeroSection'
+import SecondSection from './SecondSection'
+import ThirdSection from './ThirdSection'
 
 export default function AboutPage() {
   return (
-    <div>AboutPage</div>
+    <div>
+      <StoryHeroSection />
+      <SecondSection />
+      <ThirdSection />
+    </div>
   )
 }

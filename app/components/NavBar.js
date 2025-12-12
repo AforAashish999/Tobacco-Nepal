@@ -35,7 +35,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <div className="sticky top-0 z-50">
+    <div className="sticky top-0 z-500">
       <nav className="bg-[#211F1B] ">
         <ul className="p-5">
           <li className="flex justify-between items-center">

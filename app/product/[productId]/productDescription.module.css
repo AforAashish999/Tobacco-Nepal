@@ -165,7 +165,7 @@
 
 .similarOuterDiv{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     background-color: black;
     color: white;
     min-height: 68vh;
@@ -182,7 +182,7 @@
     flex-direction: column;
     justify-content: space-between;
     border-radius: 15px;
-    width: 23vw;
+    /* width: 23vw; */
     border: 1px solid transparent;
 }
 .smProductDiv:hover{
