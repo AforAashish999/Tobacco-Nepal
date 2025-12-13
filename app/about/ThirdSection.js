@@ -70,10 +70,11 @@ export default function ThirdSection() {
                         <LuLeaf className={styles.principles__icon} />
                     </div>
                     <h1 className={styles.principles__itemTitle} > Sustainable Development </h1>
-                    <p className={styles['principles__description--narrow']}>We promote responsible growth by reducing environmental impact and building a greener future.</p>
+                    <p className={`${styles.principles__description} ${styles['principles__description--wide']}`}>We promote responsible growth by reducing environmental impact and building a greener future.</p>
                 </div>
 
             </div>
         </div>
     )
 }
+
