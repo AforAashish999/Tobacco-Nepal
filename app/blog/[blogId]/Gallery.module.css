@@ -1,0 +1,24 @@
+.gallery{
+    background-color: black;
+    padding: 0 64px 64px;
+}
+.gallery__heading{
+        color: #f70;
+        font-size: 30px;
+        margin-bottom: 32px;
+        font-weight: bold;
+}
+.gallery__grid{
+    height: 536px;
+    display: grid;
+    grid-template-columns: repeat(3,  1fr);
+    grid-template-rows: repeat(2,  1fr);
+    gap: 24px;
+  
+}
+.gallery__items{
+    /* this div should be relative if i have to use fill for Image tag */
+    position: relative;
+    /* background-color: red; */
+      border-radius: 6px;
+}
