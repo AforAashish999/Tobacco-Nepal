@@ -7,25 +7,25 @@ import { MdErrorOutline } from "react-icons/md";
 export default function Footer() {
   return (
     <div className='min-h-90 '>
-            <div className="px- space-y-6 bg-neutral-900  "> 
+            <div className="px- space-y-6 bg-[#150D06]  "> 
 
             <div className='grid grid-cols-4 py-7 '>
 
                 <div className=" col-span-1 p-3 space-y-5 ">
-                  <h2 className="text-2xl font-bold text-orange-500">Tobacco<span className="text-yellow-300">Nepal</span>  </h2>
-                  <p className="text-yellow-200 text-xl">Discover genuine Nepalese 
+                  <h2 className="text-2xl font-bold text-[#FF7700] ">Tobacco<span className="text-[#FFC100] ">Nepal</span>  </h2>
+                  <p className="text-[#FFECB3] max-w-[226.76px] text-justify ">Discover genuine Nepalese 
                     tobacco items that arent found anywhere else. Experience
                      unique flavors that capture the spirit of Nepals cultural legacy.</p>
                      <div className="flex space-x-6">
-                        <FaFacebook className="text-4xl text-orange-800"/>
-                        <BsWhatsapp className="text-4xl text-orange-800" />
+                        <FaFacebook className="text-4xl text-amber-700/90"/>
+                        <BsWhatsapp className="text-4xl text-amber-700/90 " />
                      </div>
                 </div>
 
                 <div className=" col-span-1 p-3 space-y-5">
-                   <h2 className="text-orange-500 text-2xl font-bold">  Quick Links</h2>
+                   <h2 className="text-[#FF7700] text-lg font-bold">  Quick Links</h2>
                    <ul>
-                    <li className="flex flex-col  text-orange-300">
+                    <li className="flex flex-col  text-[#c28957] text-sm space-y-3 ">
                         <Link href="/"> Home</Link>
                         <Link href="product"> Products </Link>
                         <Link href="/about"> About Us </Link>
@@ -35,19 +35,23 @@ export default function Footer() {
                    </ul>
                 </div>
 
-                <div className=" col-span-2 py-3 px-10 space-y-5">
-                    <h2 className="text-orange-500 text-2xl font-bold"> Legal</h2>
+                <div className=" col-span-1 py-3  space-y-5">
+                    <h2 className="text-[#FF7700] text-lg font-bold"> Legal</h2>
                     <Link href="/legal"
-                    className="text-orange-300"
+                    className="text-[#c28957] text-sm "
                     > legal notice, privacy & compliance policy </Link>
+                    </div>
+
+                    <div className="col-span-1">
+
                     </div>
                     
             </div>
             {/* notice */}
-            <div className="px-6" > 
-            <div className="flex items-center justify-center bg-orange-900 p-4 rounded-lg space-x-3">
-                <MdError className="text-4xl text-orange-700 " />
-                <p className="text-white text-lg  tracking-wide"> Warning: These products contain Nicotine. Nicotine is an addictive chemical.</p>
+            <div className="px-4" > 
+            <div className="flex items-center justify-center bg-[#522D0C] p-4 rounded-lg space-x-3">
+                <MdError className="text-[32px] text-amber-700 " />
+                <p className="text-white font-medium  "> Warning: These products contain Nicotine. Nicotine is an addictive chemical.</p>
             </div>
             </div>
 

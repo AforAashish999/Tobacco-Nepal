@@ -4,23 +4,29 @@ import React from 'react'
 
 export default function SecondSection() {
     return (
-        <div className={styles.main} >
+        <div className={styles.main} >  
         <div className={styles.company} >
             <div className={styles.company__description} >
-                <h1 className={styles.company__title}>Uchha Himal Products </h1>
+                <h1 className={styles.company__title}>Uccha Himal Product </h1>
                 <p className={styles.company__para1} >
-                    Welcome to <span className={styles['company__para1--highlight']}  >Uchha Himal Product Pvt Ltd</span>, a trusted name in Nepal's tobacco industry.
-                    Founded with a vision to blend tradition and innovation, we craft premium tobacco products that reflect
+                    Welcome to <span className={styles['company__para1--highlight']}  >Uchha Himal Product Pvt Ltd</span>, a trusted name 
+                    in <span className={`${styles.company__para1} ${styles['company__para1--space']}`} >
+                        Nepal's tobacco industry. Founded with a vision to blend
+                    </span>  tradition and innovation, we craft premium tobacco products that reflect
                     excellence and authenticity.
                 </p>
                 <p className={styles.company__para2}>
-                    Guided by integrity and a commitment to quality, we source the finest tobacco
-                    leaves and use advanced manufacturing processes to deliver products that meet
+                    Guided by integrity and a commitment to quality, we source
+                     the <span className={`${styles.company__para2} ${styles['company__para2--space']}`}>
+                        finest tobacco leaves and use advanced manufacturing 
+                     </span> processes to deliver products that meet
                     the highest standards.
                 </p>
                 <p className={styles.company__para3}>
-                    For us, tobacco craftsmanship is an art — one that connects culture, heritage, and innovation.
-                    As we grow, we remain committed to sustainability, employee well-being, and community
+                    For us, tobacco craftsmanship is an art — one that
+                     connects <span className={`${styles.company__para3} ${styles['company__para3--space']}`}>
+                        culture, heritage, and innovation. As we grow, we remain </span> <span className={`${styles.company__para3} ${styles['company__para3--spaceWide']}`}>
+                            committed to sustainability, employee well-being, and</span> community
                     responsibility.
                 </p>
             </div>

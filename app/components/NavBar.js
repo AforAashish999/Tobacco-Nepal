@@ -15,8 +15,8 @@ export default function NavBar() {
 
   const linkClass = (path) =>
     pathname === path
-      ? "border-b-2 border-yellow-500"
-      : "text-white hover:text-yellow-400";
+      ? "border-b-2 border-yellow-500 text-sm   "
+      : "text-white hover:text-yellow-400 text-sm";
 
   /* ✅ click outside to close */
   useEffect(() => {
@@ -35,15 +35,15 @@ export default function NavBar() {
   }, []);
 
   return (
-    <div className="sticky top-0 z-500">
-      <nav className="bg-[#211F1B] ">
-        <ul className="p-5">
+    <div className="sticky top-0 z-500  ">
+      <nav className="bg-[#1f1f1f] ">
+        <ul className="p-4">
           <li className="flex justify-between items-center">
             <Link href="/">
               <Image
                 src={Logo}
                 alt="Tobacco Nepal Logo"
-                className="w-27 h-14 hover:scale-105"
+                className="w-25 h-14 hover:scale-105"
               />
             </Link>
 
@@ -76,7 +76,7 @@ export default function NavBar() {
             </div>
 
             <Link
-              className="font-bold text-lg px-6 py-1 bg-[#EAB308] rounded-md hover:bg-[#d4a007] transition-all duration-200"
+              className="font-bold  px-6 py-[7px] bg-[#EAB308] rounded-sm hover:bg-[#d4a007] transition-all duration-200"
               href="/inquire"
             >
               Inquire Now

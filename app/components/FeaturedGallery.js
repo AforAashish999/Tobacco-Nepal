@@ -13,7 +13,7 @@ export default async function FeaturedGallery() {
             {/* headings */}
             <div className='flex flex-col items-center space-y-6'>
                 <h1 className='text-5xl font-bold text-[#BE6B22] '> Gallery </h1>
-                <p className='tracking-wide font-semibold text-xl max-w-4xl text-center text-[#EAB308] '>
+                <p className=' font- text-xl max-w-3xl text-center text-[#EAB308] font-medium '>
                     Discover how we grow, process, and share our tobacco through short videos that
                     highlight our story, people, and passion.</p>
             </div>
@@ -24,9 +24,9 @@ export default async function FeaturedGallery() {
 
                 {/* name and arrow */}
                 <div className="flex justify-between text-[#EBCB66] px-4 ">
-                    <h2 className="font-bold text-lg"> Photo Gallery </h2>
+                    <h2 className="font-medium text-lg"> Photo Gallery </h2>
                     <Link href="/photogallery"
-                        className="  font-bold tracking-wide flex items-center hover:text-yellow-300  ">
+                        className="  font-medium  flex items-center hover:text-yellow-300  ">
                         <h2 className="">View All</h2>
                         <MdOutlineArrowRightAlt className="text-xl" />
                     </Link>
@@ -54,9 +54,9 @@ export default async function FeaturedGallery() {
                 <div className="bg-green- space-y-3">
                     {/* name and arrow */}
                 <div className="flex justify-between text-[#EBCB66] px-4 ">
-                    <h2 className="font-bold text-lg"> Video Gallery </h2>
+                    <h2 className="font-medium text-lg"> Video Gallery </h2>
                     <Link href="/videogallery"
-                        className="  font-bold tracking-wide flex items-center hover:text-yellow-300  ">
+                        className="  font-medium tracking-wide flex items-center hover:text-yellow-300  ">
                         <h2 className="">View All</h2>
                         <MdOutlineArrowRightAlt className="text-xl" />
                     </Link>

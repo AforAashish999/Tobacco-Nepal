@@ -45,7 +45,7 @@ export default function CategoriesList() {
                 </button>
                 <button
                     onClick={() => {
-                        setShowAllProduct("false");
+                        setShowAllProduct(false);
                         setUseCategory("gutkha");
                     }}
                     className={` text-lg  tracking-wide font-semibold rounded-lg cursor-pointer px-12

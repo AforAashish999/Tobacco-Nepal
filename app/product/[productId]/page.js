@@ -6,7 +6,7 @@ import Image from "next/image";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-export default async function page({ params }) {
+export default async function page({ params }) {   
     const { productId } = await params;
     const response = await fetch(`${process.env.API_URL}/products`);
 
@@ -87,7 +87,7 @@ export default async function page({ params }) {
 
                     </Link>
                 </div>
-
+  
                 <div className={styles.similarOuterDiv} >
                     {
                         similarProducts.map((sm) => (

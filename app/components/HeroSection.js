@@ -1,7 +1,6 @@
 // import Image from "next/image"
 // import HeroImage from '../../public/heroSectionImage.jpg';
 
-
 // export default function HeroSection() {
 //   return (
 
@@ -13,45 +12,52 @@
 
 //         </div>
 //     </div>
-  
+
 //   )
 // }
 
-import Image from "next/image";
+import Image from 'next/image'
 // import HeroImage from "../../public/heroSectionImage.jpg";
-import Link from "next/link";
+import Link from 'next/link'
 
-export default function HeroSection() {
+export default function HeroSection () {
   return (
-    <div className="h-screen w-full relative
-    bg-[url('/heroSectionImage.jpg')] bg-cover bg-center ">
-        <div className='h-screen w-screen bg-black/73 z-10 absolute backdrop-blur-sm '></div>
-   
+    <div
+      className="h-screen w-full relative
+    bg-[url('/heroSectionImage.jpg')] bg-cover bg-center "
+    >
+      <div className='h-screen w-screen bg-black/74 z-10 absolute backdrop-blur-sm '></div>
 
       {/* content */}
-      <div className="absolute z-30 h-screen w-screen flex flex-col items-center justify-center space-y-6">
-      <h1 className="  text-7xl font-bold text-[#DF954E] ">
-        Premium Tobacco
-      </h1>
-    <p className="text-2xl font-bold text-[#F7E2A2] max-w-3xl text-center tracking-wide">
-      Experience the finest quality tobacco products . Our traditional methods and sustainable practices ensure 
-      exceptional quality in every product.
-    </p>
+      <div className='absolute z-30 h-screen w-screen flex flex-col justify-center items-center pb-5 '>
+        <h1 className='  text-[64px] font-bold text-[#DF954E] mb-2 '>
+          Premium Tobacco
+        </h1>
+        <p className='text-2xl font-medium leading-tight text-[#F7E2A2] max-w-3xl text-center mb-8 '>
+          Experience the finest quality tobacco products . Our traditional
+          methods and sustainable practices ensure exceptional quality in every
+          product.
+        </p>
 
-    <div className="flex items-center space-x-4 mt-7">
-    <Link href="/products"
-    className="bg-[#EAB308] px-5 py-2 text-xl font-bold rounded-md hover:bg-yellow-300">
-      View Products</Link>
-    <Link href="/about"
-    className="border-white border text-white bg-black px-7 py-2 font-bold rounded-md hover:bg-neutral-700 "
-    > Learn More </Link>
-
-    </div>
+        <div className='flex items-center space-x-4 mt-7'>
+          <Link
+            href='/products'
+            className='bg-[#EAB308] px-6 py-2 text-lg font-bold rounded-md hover:bg-yellow-300'
+          >
+            View Products
+          </Link>
+          <Link
+            href='/about'
+            className='border-gray-400 border text-white h-[44.33px] bg-black px-6 py-2 font-bold rounded-lg hover:bg-neutral-700 '
+          >
+            {' '}
+            Learn More{' '}
+          </Link>
+        </div>
       </div>
     </div>
-  );
+  )
 }
-
 
 /*
 <div className="h-screen w-screen bg-[url('https://images.squarespace-cdn.com/content/v1/653d0cf7eb03f21c4335bede/1698502072328-MKPRRNZF1ZALOSSR5WYZ/image-asset.jpeg')] bg-cover bg-center 

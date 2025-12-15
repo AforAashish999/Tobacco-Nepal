@@ -168,7 +168,7 @@
     grid-template-columns: repeat(4, 1fr);
     background-color: black;
     color: white;
-    min-height: 68vh;
+    height: 68vh;
     /* height: 385px; */
     gap: 20px;
     border-radius: 10px;
@@ -189,14 +189,15 @@
   border: 1px solid #eab2088a;
     transition: all 0.3s ease-in-out;
 }
-.innerImgDiv{
-  margin: 20px 0px;
-  width: 100%;
-  /* height: auto; */
-}
 .innerImgOuterDiv{
   width: 100%;
   height: 255px;
+}
+.innerImgDiv{
+  margin: 20px 0px;
+  width: 100%;
+    height: 240px;
+  /* height: auto; */
 }
 
 .smDescription{

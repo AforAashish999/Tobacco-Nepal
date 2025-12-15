@@ -28,11 +28,11 @@ export default function GalleryPopUp() {
          flex flex-col justify-center  '> 
         
         <Link href="/photogallery"
-        className="hover:bg-yellow-500 px-3 py-1 rounded-md hover:text-black" >
+        className="hover:bg-[#EAB308] px-3 py-1 rounded-md hover:text-black" >
             Photo Gallery
         </Link>
         <Link href="/videogallery"
-         className="hover:bg-yellow-500 px-3 py-1 rounded-md hover:text-black" >
+         className="hover:bg-[#EAB308] px-3 py-1 rounded-md hover:text-black" >
             Video Gallery
         </Link>
         {/* <button className='bg-red-600 p' onClick={closePop}>

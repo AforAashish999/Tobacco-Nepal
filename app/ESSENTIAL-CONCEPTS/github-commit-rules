@@ -43,3 +43,27 @@ refactor	Code improvement without behavior change
 chore	Tooling, configs, dependencies
 docs	Documentation
 test	Tests added or updated
+
+
+1. Stage all changes except the files you don’t want
+
+Suppose you have these changes:
+
+M file1.js
+M file2.js   <-- don't want to commit
+M file3.js
+
+
+Use:
+
+git add .
+git reset file2.js
+
+
+git add . → stages everything
+
+git reset file2.js → unstages the file you don’t want
+
+Then commit:
+
+git commit -m "Commit message"
