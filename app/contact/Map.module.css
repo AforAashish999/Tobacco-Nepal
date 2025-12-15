@@ -1,0 +1,14 @@
+.map {
+  height: 628px;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  padding: 64px 0px;
+}
+.map__link {
+  height: 500px;
+  width: 992px;
+  border-radius: 7px;
+  overflow: hidden;
+}

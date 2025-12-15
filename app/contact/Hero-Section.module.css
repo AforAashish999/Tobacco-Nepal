@@ -1,40 +1,40 @@
-.hero{
-    height: 400px;
-    width: 100%;
-    background-image: url('/productHero.webp');
-    background-position: center;
-    background-size: cover;
-    position: relative;
+.hero {
+  height: 400px;
+  width: 100%;
+  background-image: url('/productHero.webp');
+  background-position: center;
+  background-size: cover;
+  position: relative;
 }
-.hero__overlay{
-    position: absolute;
-   background-color: rgba(0, 0, 0, 0.7);
-    height: 100%;
-    width: 100%;
-    z-index: 10;
+.hero__overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  z-index: 10;
 }
-.hero__content{
-    z-index: 50;
-    /* background-color: red; */
-    height: 100%;
-    width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.hero__content {
+  z-index: 50;
+  /* background-color: red; */
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.hero__heading{
-    font-size: 64px;
-    color: #e9954e;
-    font-weight: bold;
-    /* z-index: 50; */
-    margin-bottom: 20px;
+.hero__heading {
+  font-size: 64px;
+  color: #e9954e;
+  font-weight: bold;
+  /* z-index: 50; */
+  margin-bottom: 20px;
 }
-.hero__subheading{
-    font-size: 18px;
-    color: #c28957;
-    font-weight: bold;
-    max-width: 440px;
-    text-align: center;
+.hero__subheading {
+  font-size: 18px;
+  color: #c28957;
+  font-weight: bold;
+  max-width: 440px;
+  text-align: center;
 }

@@ -1,0 +1,8 @@
+.main {
+  height: 968.7px;
+  width: 100%;
+  display: flex;
+  gap: 48px;
+  padding: 80px;
+  background-color: black;
+}

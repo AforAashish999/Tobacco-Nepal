@@ -1,0 +1,106 @@
+/* .contact{
+    height: 968.7;
+    width: 100%;
+    padding: 80px;
+    display: flex;
+    gap: 48px;
+    background-color: black;
+} */
+.contact {
+  /* background-color: red; */
+  /* height: 968.7; */
+  width: 672.45;
+  padding: 40px;
+  background-color: black;
+}
+.contact__form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.contact__information {
+  background-color: green;
+  width: 376.22;
+  /* padding: 40px; */
+}
+.contact__heading {
+  font-size: 30px;
+  color: #be6b22;
+  font-weight: bold;
+}
+.contact__subHeading {
+  font-size: 16px;
+  color: var(--color-zinc-500);
+}
+/* .contact__wrapper{
+    width: 100%;
+} */
+.contact__label {
+  font-size: 20px;
+  color: #c28957;
+  display: flex;
+  gap: 3px;
+}
+.contact__asterisk {
+  font-size: 14px;
+}
+.contact__field {
+  background-color: #282828;
+  padding: 8px 16px;
+  /* display: inline-block; */
+  width: 100%;
+  display: block;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  /* that | of input field */
+  caret-color: white;
+}
+.contact__field::placeholder {
+  color: rgba(255, 255, 255, 0.47);
+  /* font-weight:500; */
+  font-size: 17px;
+}
+.contact__field:focus {
+  border: 2px solid #c28957;
+}
+
+.contact__textarea {
+  height: 128px;
+  padding: 8px 16px;
+  background-color: #282828;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  caret-color: white;
+}
+.contact__textarea:focus {
+  border: 2px solid #c28957;
+}
+.contact__textarea::placeholder {
+  color: rgba(255, 255, 255, 0.47);
+  font-size: 17px;
+}
+
+.contact__checkBox {
+  color: var(--color-slate-200);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  accent-color: #c28957;
+}
+
+.contact__button {
+  font-size: 16px;
+  background-color: #eab308;
+  padding: 8px 24px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.contact__button:hover {
+  background-color: #fdbe02;
+}
