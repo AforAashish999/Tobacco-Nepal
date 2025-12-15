@@ -1,0 +1,25 @@
+One Real BEM Violation (You Should Fix This)
+❌ Problem
+<p className={styles['principles__description--narrow']}>
+
+
+In BEM, a modifier cannot exist alone.
+It must modify a base class, not replace it.
+
+✅ Correct Usage
+<p className={`${styles.principles__description} ${styles['principles__description--narrow']}`}>
+
+✅ Correct CSS Pattern
+.principles__description {
+  color: var(--color-gray-300);
+  text-align: center;
+  max-width: 320px;
+  letter-spacing: 0.05em;
+}
+
+.principles__description--narrow {
+  max-width: 260px;
+}
+
+
+This is textbook BEM.

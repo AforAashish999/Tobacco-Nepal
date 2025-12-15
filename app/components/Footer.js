@@ -6,7 +6,7 @@ import { MdErrorOutline } from "react-icons/md";
 
 export default function Footer() {
   return (
-    <div className='min-h-90'>
+    <div className='min-h-90 '>
             <div className="px- space-y-6 bg-neutral-900  "> 
 
             <div className='grid grid-cols-4 py-7 '>

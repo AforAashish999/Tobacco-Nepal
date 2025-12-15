@@ -1,17 +1,23 @@
 import styles from "./Second-Section.module.css"
 import { IoPersonCircleSharp } from "react-icons/io5";
 import Link from "next/link";
+import Image from "next/image"
+import PostImage from "../../public/blog_article_image.webp"
 
-
-export default function SecondSection() {
+export default function SecondSection() { 
   return (
     <div className={styles.article} >
         <h1 className={styles.article__title} > Featured Articles </h1>
             <div className={styles.article__grid} >
 
             <div className={`${styles.article__item} ${styles['article__item--shadow']}`} >
+
                 <div className={styles.article__imageWrapper} >
-                    <img src="/blog_article_image.webp" alt="article image" className={styles.article__image} />
+                    <Image src={PostImage} alt="blogImage"
+                    fill
+                    style={{objectFit: "cover", borderRadiusTop:"10px"}} /> 
+                    <p className="text-white"> I am text</p>
+                   
                 </div>
                 <div className={styles.article__details} >
 
@@ -29,7 +35,7 @@ export default function SecondSection() {
                     <p  className={styles.article__userRole}>
                         Admin
                     </p>
-                    <Link href="/blog-gallerypage" className={styles.article__link} >
+                    <Link href="/blog/1" className={styles.article__link} >
                         Learn More
                     </Link>
                 </div>

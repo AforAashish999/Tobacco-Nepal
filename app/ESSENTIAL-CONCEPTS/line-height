@@ -1,0 +1,12 @@
+h1 {
+  line-height: 1.15;
+}
+Try values in this range:
+
+1.1 → very tight
+
+1.15 → ideal for headings
+
+1.25 → normal heading spacing
+
+Avoid normal for large fonts.
