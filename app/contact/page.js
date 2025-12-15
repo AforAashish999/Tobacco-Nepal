@@ -1,7 +1,10 @@
-import React from 'react'
+import HeroSection from './HeroSection.js'
+
 
 export default function ContactPage() {
   return (
-    <div>ContactPage</div>
+    <div>
+      <HeroSection />
+    </div>
   )
 }
