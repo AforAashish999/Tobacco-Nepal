@@ -57,7 +57,7 @@ export default function NavBar() {
               <div className="relative hover:text-yellow-500 " ref={galleryRef}>
                 <button
                   onClick={() => setIsGalleryOpen((prev) => !prev)}
-                  className="flex items-center gap-1 cursor-pointer"
+                  className="flex items-center gap-1 cursor-pointer text-sm "
                 >
                   Gallery
                   <MdOutlineKeyboardArrowDown

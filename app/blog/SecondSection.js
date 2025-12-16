@@ -12,6 +12,7 @@ export default function SecondSection() {
 
             <div className={`${styles.article__item} ${styles['article__item--shadow']}`} >
 
+{/* /* this should be relative this is the image div, so by making it relatvie i can use fill in Image tag */ }
                 <div className={styles.article__imageWrapper} >
                     <Image src={PostImage} alt="blogImage"
                     fill

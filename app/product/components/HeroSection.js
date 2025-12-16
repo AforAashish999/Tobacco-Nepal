@@ -11,7 +11,7 @@ export default function ProductHeroSection() {
       <div className='h-full w-full absolute bg-black/80 backdrop-blur-lg z-10'></div>
 
       <div className="z-40 relative space-y-7">
-        <h1 className="text-7xl tracking-wide font-bold text-[#df954e] text-center
+        <h1 className="text-7xl  font-bold text-[#df954e] text-center
          transition duration-300 animate-pulse  ">
           Our Premium Products
         </h1>
@@ -36,7 +36,7 @@ export default function ProductHeroSection() {
         </p> */}
 
 
-               <p className="text-[#f7e2a2] text-[20px] max-w-[780px] text-center bg-red">
+               <p className="text-[#f7e2a2] text-[20px] max-w-4xl text-center bg-red">
           Discover our extensive selection of high-quality tobacco products, each expertly crafted 
           with the finest ingredients from Nepals rich soil.
         </p>

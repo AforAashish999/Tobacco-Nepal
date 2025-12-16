@@ -27,6 +27,8 @@
     0 10px 31px -5px rgba(255, 255, 255, 0.35),
     0 0 5px 0 rgba(255, 255, 255, 0.13);
 }
+
+/* this should be relative this is the image div, so by making it relatvie i can use fill in Image tag */
 .article__imageWrapper{
     position: relative;
     height: 224px;

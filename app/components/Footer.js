@@ -13,7 +13,7 @@ export default function Footer() {
 
                 <div className=" col-span-1 p-3 space-y-5 ">
                   <h2 className="text-2xl font-bold text-[#FF7700] ">Tobacco<span className="text-[#FFC100] ">Nepal</span>  </h2>
-                  <p className="text-[#FFECB3] max-w-[226.76px] text-justify ">Discover genuine Nepalese 
+                  <p className="text-[#FFECB3]  max-w-56 text-justify ">Discover genuine Nepalese 
                     tobacco items that arent found anywhere else. Experience
                      unique flavors that capture the spirit of Nepals cultural legacy.</p>
                      <div className="flex space-x-6">
