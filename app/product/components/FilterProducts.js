@@ -291,6 +291,7 @@ import SearchSort from './SearchSort'
 import Image from 'next/image'
 import { MdKeyboardArrowLeft } from 'react-icons/md'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
+import ProductCard from '../../components/ProductCard.js'
 
 const fetcher = url => fetch(url).then(res => res.json())
 
@@ -369,32 +370,11 @@ export default function FilterProducts () {
               There are no products in this category
             </p>
           </div>
-        ) : (
+        ) : 
           paginatedData.map(item => (
-            <div key={item.id} className='rounded-xl overflow-hidden '>
-              {/* IMAGE Wrapper */}
-              <div className=' h-[255.1px] flex flex-col justify-evenly bg-[#111111] '>
-                <div className='h-2/3 bg-blue-500 relative '>
-                  <Image
-                    src={item.images}
-                    alt='images'
-                    fill
-                    style={{ objectFit: 'cover', objectPosition: 'center' }}
-                  />
-                </div>
-              </div>
-              {/* DESCRIPTIONI */}
-              <div className='p-4 bg-[#1A1A1A] '>
-                <h1 className='text-lg text-[#EAB308] text-center mb-2 font-bold '>
-                  {item.name}
-                </h1>
-                <h2 className='text-[#d2863c] text-sm line-clamp-2 text-center '>
-                  {item.description}
-                </h2>
-              </div>
-            </div>
+            <ProductCard item={item} />
           ))
-        )}
+        }
       </div>
       {/* Pagination Controls */}
       <div className='flex justify-center items-center gap-4 mt-5 mb-20 '>
@@ -441,6 +421,7 @@ export default function FilterProducts () {
           <MdOutlineKeyboardArrowRight className='text-3xl' />
         </button>
       </div>
+
     </div>
   )
 }
