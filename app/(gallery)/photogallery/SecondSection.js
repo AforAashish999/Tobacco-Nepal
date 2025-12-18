@@ -26,13 +26,10 @@ export default function SecondSection() {
     }
     const url = `${process.env.NEXT_PUBLIC_API}/gallery${params.toString() ? `?${params.toString()}` : ''}`
     const { data, error, isLoading } = useSWR(url, fetcher);
-    console.log(data);
     if (isLoading && !data)
         return <p>Page is loading................................</p>
     if (error) return <p>Error occured................{error.message} </p>
 
-
-    console.log(data);
      // Pagination logic
   const totalPages = Math.ceil(data.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;

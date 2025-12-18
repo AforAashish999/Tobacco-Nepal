@@ -1,14 +1,4 @@
-/* .contact{
-    height: 968.7;
-    width: 100%;
-    padding: 80px;
-    display: flex;
-    gap: 48px;
-    background-color: black;
-} */
 .contact {
-  /* background-color: red; */
-  /* height: 968.7; */
   width: 672.45;
   padding: 40px;
   background-color: black;
@@ -22,7 +12,6 @@
 .contact__information {
   background-color: green;
   width: 376.22;
-  /* padding: 40px; */
 }
 .contact__heading {
   font-size: 30px;
@@ -33,9 +22,7 @@
   font-size: 16px;
   color: var(--color-zinc-500);
 }
-/* .contact__wrapper{
-    width: 100%;
-} */
+
 .contact__label {
   font-size: 20px;
   color: #c28957;
@@ -48,18 +35,15 @@
 .contact__field {
   background-color: #282828;
   padding: 8px 16px;
-  /* display: inline-block; */
   width: 100%;
   display: block;
   outline: none;
   border-radius: 5px;
   border: 2px solid transparent;
-  /* that | of input field */
   caret-color: white;
 }
 .contact__field::placeholder {
   color: rgba(255, 255, 255, 0.47);
-  /* font-weight:500; */
   font-size: 17px;
 }
 .contact__field:focus {

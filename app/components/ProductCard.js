@@ -1,9 +1,11 @@
-import React from 'react'
-import Image from 'next/image'
+import Image from 'next/image';
+import Link from "next/link";
 
 export default function ProductCard ({ item }) {
   return (
-    <div className='rounded-xl overflow-hidden '>
+    <Link 
+    href={`/product/${item.id}`}
+    className='rounded-xl overflow-hidden '>
       {/* IMAGE Wrapper */}
       <div className=' h-[255.1px] flex flex-col justify-evenly bg-[#111111] '>
         <div className='h-2/3 bg-blue-500 relative '>
@@ -24,6 +26,6 @@ export default function ProductCard ({ item }) {
           {item.description}
         </h2>
       </div>
-    </div>
+    </Link>
   )
 }

@@ -1,23 +1,4 @@
-// import Image from "next/image"
-// import HeroImage from '../../public/heroSectionImage.jpg';
-
-// export default function HeroSection() {
-//   return (
-
-//     <div className='  h-screen w-full pt-20 bg-[url('https://images.squarespace-cdn.com/content/v1/653d0cf7eb03f21c4335bede/1698502072328-MKPRRNZF1ZALOSSR5WYZ/image-asset.jpeg')] bg-cover bg-center  '
-//  >
-
-//         <div className=" z-10">
-//         <h1 className=" absolute text-6xl font-bold text-yellow-200"> Premium Tobacco </h1>
-
-//         </div>
-//     </div>
-
-//   )
-// }
-
 import Image from 'next/image'
-// import HeroImage from "../../public/heroSectionImage.jpg";
 import Link from 'next/link'
 
 export default function HeroSection () {

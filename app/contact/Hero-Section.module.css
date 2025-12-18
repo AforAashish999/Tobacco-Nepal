@@ -15,7 +15,6 @@
 }
 .hero__content {
   z-index: 50;
-  /* background-color: red; */
   height: 100%;
   width: 100%;
   position: relative;
@@ -28,7 +27,6 @@
   font-size: 64px;
   color: #e9954e;
   font-weight: bold;
-  /* z-index: 50; */
   margin-bottom: 20px;
 }
 .hero__subheading {

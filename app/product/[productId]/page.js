@@ -10,7 +10,6 @@ export default async function page({ params }) {
     const { productId } = await params;
     const response = await fetch(`${process.env.API_URL}/products`);
 
-    //good practice
     if (!response.ok) {
         console.error(" Aashish Error", response.status, response.statusText)
         throw new Error("Failed to fetch")

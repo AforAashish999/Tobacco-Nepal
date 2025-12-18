@@ -1,24 +1,3 @@
-// import React from 'react'
-
-// export default function GalleryPopUp({closePop}) {
-//   return (
-//     <div className='min-h-screen relative bg-white/0 -z-5 '>
-//         <div className='border-red-600 border-2 text-yellow-600 absolute top-20 right-120'> 
-//         <p>
-//             Photo Gallery
-//         </p>
-//         <p>
-//             Video Gallery
-//         </p>
-//         <button className='bg-red-600 p-5' onClick={closePop}>
-//             close
-//         </button>
-//         </div>
-//     </div>
-//   )
-// }
-
-
 import Link from "next/link"
 
 export default function GalleryPopUp() {
