@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+
 import HeroSection from "./components/HeroSection.js"
 import FeatureProducts from "./components/FeatureProducts.js"
 import Story from "./components/Story.js"
