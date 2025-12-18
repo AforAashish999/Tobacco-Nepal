@@ -1,0 +1,331 @@
+plzz explain me im beginer how this whole code works, what is that pathname, wehere does it came. 
+explain me from the begining11:23 AMOf course! Let me explain this step by step from the very beginning. 🙂
+
+1. What is this component?
+This is a Navigation Bar (NavBar) component - the menu you see at the top of websites with links like Home, Product, About, etc.
+
+2. Imports - Bringing in tools we need
+javascriptimport Link from 'next/link'
+import Image from 'next/image'
+import Logo from '../../public/tobaccoNepalLogo.webp'
+import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
+import { usePathname } from 'next/navigation'
+import { useState, useEffect, useRef } from 'react'
+import GalleryPopUp from './GalleryPopUp'
+
+Link: Next.js component for navigation (like <a> tag but faster)
+Image: Next.js optimized image component
+Logo: Your company logo image file
+MdOutlineKeyboardArrowDown: The down arrow icon (▼) next to Gallery
+usePathname: A hook that tells us which page we're currently on
+useState, useEffect, useRef: React hooks (I'll explain these below)
+GalleryPopUp: Your dropdown component with Photo/Video links
+
+
+3. Understanding React Hooks
+useState - Remembering things
+javascriptconst [isGalleryOpen, setIsGalleryOpen] = useState(false)
+Think of this like a light switch:
+
+isGalleryOpen = Is the light on? (true/false)
+setIsGalleryOpen = The switch to turn it on/off
+useState(false) = Initially the light is OFF (false)
+
+When you click "Gallery", it toggles:
+javascriptsetIsGalleryOpen(prev => !prev) // If OFF, turn ON. If ON, turn OFF.
+useRef - Grabbing an element
+javascriptconst galleryRef = useRef(null)
+This is like putting a name tag on an HTML element so you can find it later. We use it to detect clicks outside the dropdown.
+usePathname - Where am I?
+javascriptconst pathname = usePathname()
+This tells you which page you're currently on:
+
+If you're on homepage: pathname = "/"
+If you're on product page: pathname = "/product"
+If you're on photo gallery: pathname = "/photo-gallery"
+
+Where does it come from? Next.js automatically tracks this when you navigate between pages!
+
+4. Navigation Items Array
+javascriptconst navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Product', href: '/product' },
+  { label: 'About', href: '/about' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Gallery', href: '#', isDropdown: true },
+  { label: 'Contact', href: '/contact' }
+]
+This is like a menu list:
+
+label: What text to show
+href: Where to go when clicked
+isDropdown: Special flag for Gallery (it's not a regular link, it opens a dropdown)
+
+
+5. Dynamic Styling Function
+javascriptconst linkClass = path =>
+  pathname === path
+    ? 'border-b-2 border-yellow-500 text-sm'
+    : 'text-white hover:text-yellow-400 text-sm'
+This function highlights the current page:
+Example:
+
+You're on /product page → pathname = "/product"
+When rendering Product link → path = "/product"
+pathname === path is TRUE → Add yellow underline!
+For other links → FALSE → Normal white text
+
+
+6. useEffect #1 - Close dropdown on page change
+javascriptuseEffect(() => {
+  setIsGalleryOpen(false)
+}, [pathname])
+How it works:
+
+useEffect runs code when something changes
+[pathname] = "Watch the pathname variable"
+When pathname changes (you navigate to new page) → Run the code inside
+setIsGalleryOpen(false) → Close the dropdown
+
+Why we need this:
+Without this, when you click "Photo Gallery" and go to /photo-gallery, the dropdown would stay open. This automatically closes it!
+
+7. useEffect #2 - Close dropdown when clicking outside
+javascriptuseEffect(() => {
+  const handleClickOutside = event => {
+    if (galleryRef.current && !galleryRef.current.contains(event.target)) {
+      setIsGalleryOpen(false)
+    }
+  }
+  document.addEventListener('mousedown', handleClickOutside)
+  return () => document.removeEventListener('mousedown', handleClickOutside)
+}, [])
+Step by step:
+
+handleClickOutside - Function that checks where you clicked
+galleryRef.current - The dropdown element (remember the name tag?)
+!galleryRef.current.contains(event.target) - "Did I click OUTSIDE the dropdown?"
+If YES → Close it (setIsGalleryOpen(false))
+document.addEventListener('mousedown', handleClickOutside) - Listen for all clicks
+return () => ... - Cleanup when component unmounts (removes the listener)
+[] - Empty array means "run this ONCE when component loads"
+
+
+8. Rendering the Navigation
+javascript{navItems.map(item => (
+  <li key={item.label}>
+    {item.isDropdown ? (
+      // Gallery dropdown code
+    ) : (
+      // Regular link code
+    )}
+  </li>
+))}
+map loops through each item in navItems:
+For regular links (Home, Product, etc.):
+javascript<Link href={item.href} className={linkClass(item.href)}>
+  {item.label}
+</Link>
+Creates a clickable link with proper styling.
+For Gallery (dropdown):
+javascript<div ref={galleryRef}>
+  <button onClick={() => setIsGalleryOpen(prev => !prev)}>
+    Gallery
+    <MdOutlineKeyboardArrowDown />
+  </button>
+
+  {isGalleryOpen && (
+    <div className='absolute top-full mt-2'>
+      <GalleryPopUp />
+    </div>
+  )}
+</div>
+
+ref={galleryRef} - Attach the name tag for click-outside detection
+onClick - Toggle dropdown open/closed
+{isGalleryOpen && <GalleryPopUp />} - Only show popup if isGalleryOpen is true
+
+
+Visual Flow Example:
+
+Page loads → pathname = "/" → Home link gets yellow underline
+User clicks Gallery button → setIsGalleryOpen(true) → Dropdown appears
+User clicks "Photo Gallery" → Navigate to /photo-gallery
+pathname changes to /photo-gallery → First useEffect runs → Closes dropdown
+Photo Gallery link gets yellow underline (because pathname === "/photo-gallery")
+
+
+Summary:
+
+pathname: Tells you which page you're on (comes from Next.js)
+useState: Remembers if dropdown is open/closed
+useRef: Tags the dropdown element for click detection
+useEffect: Runs code when things change (pathname or component loads)
+First useEffect: Closes dropdown when you navigate
+Second useEffect: Closes dropdown when you click outside
+
+Does this make sense now? Feel free to ask about any specific part! 😊im still not getting what is  ref, and 
+here {item.isDropdown ? (
+                    <div
+                      className='relative hover:text-yellow-500 '
+                      ref={galleryRef}
+                    >
+ref={falleryref} how this works
+what is handleClickOutside
+what  is document.removeEventListener('mousedown', handleClickOutside)11:37 AMGreat questions! Let me explain these concepts in a simple way with real-world examples.
+
+1. What is ref?
+Think of ref like a name tag or ID badge you put on something so you can find it later.
+Real-world analogy:
+Imagine you're in a big classroom with 30 students. You want to find your friend John later. So you give him a special badge that says "MY_FRIEND". Now whenever you need to find John, you just look for that badge.
+In code:
+javascriptconst galleryRef = useRef(null)
+
+This creates an empty badge/container
+null means "nothing is wearing this badge yet"
+
+javascript<div ref={galleryRef}>
+
+This attaches the badge to the div
+Now galleryRef.current points to this specific div element
+
+Why we need it:
+javascriptif (galleryRef.current && !galleryRef.current.contains(event.target)) {
+  setIsGalleryOpen(false)
+}
+This says: "If I clicked somewhere, and that click was NOT inside the div with the badge, close the dropdown"
+
+2. How does ref={galleryRef} work?
+Let me show you step-by-step:
+javascript// Step 1: Create the badge
+const galleryRef = useRef(null)
+
+// Step 2: Attach badge to div
+<div ref={galleryRef}>
+  <button>Gallery</button>
+  <GalleryPopUp />
+</div>
+
+// Step 3: Use the badge to access the div
+console.log(galleryRef.current) // This will print the actual div element!
+```
+
+**Visual representation:**
+```
+Before: galleryRef.current = null (no badge attached)
+
+After rendering:
+galleryRef.current = <div>...</div> (badge now points to the div)
+
+3. What is handleClickOutside?
+This is a function that checks if you clicked outside the dropdown.
+Simple explanation:
+javascriptconst handleClickOutside = event => {
+  // 1. Check if the badge exists and has something attached
+  if (galleryRef.current && !galleryRef.current.contains(event.target)) {
+    // 2. Close the dropdown
+    setIsGalleryOpen(false)
+  }
+}
+Let me break down each part:
+event:
+When you click anywhere on the page, this function receives an event object that contains information about the click, including event.target (what you clicked on).
+galleryRef.current:
+The actual div element (the one with the badge)
+galleryRef.current.contains(event.target):
+This checks: "Is the thing I clicked (event.target) inside the dropdown div?"
+!galleryRef.current.contains(event.target):
+The ! means NOT. So this asks: "Did I click OUTSIDE the dropdown?"
+
+4. Real-world example of handleClickOutside:
+Imagine your dropdown is a house:
+javascriptconst handleClickOutside = event => {
+  // If the house exists
+  if (galleryRef.current) {
+    // Check: Is the click OUTSIDE the house?
+    if (!galleryRef.current.contains(event.target)) {
+      // If yes, close the door (dropdown)
+      setIsGalleryOpen(false)
+    }
+  }
+}
+Scenarios:
+
+You click the "Gallery" button → Inside the house → Dropdown stays open
+You click "Photo Gallery" link → Inside the house → Dropdown stays open (until page changes)
+You click on "Product" link → Outside the house → Dropdown closes
+You click on empty space → Outside the house → Dropdown closes
+
+
+5. What is addEventListener and removeEventListener?
+addEventListener - Start listening
+javascriptdocument.addEventListener('mousedown', handleClickOutside)
+This tells the browser: "Hey! Whenever someone clicks anywhere on the page, run the handleClickOutside function"
+Think of it like:
+
+Setting up a security camera that watches for clicks
+Every click triggers the handleClickOutside function
+
+removeEventListener - Stop listening
+javascriptreturn () => document.removeEventListener('mousedown', handleClickOutside)
+This tells the browser: "Stop watching for clicks. Turn off the security camera."
+Why do we need to remove it?
+Imagine you install 100 security cameras but never turn them off. Your computer would get slow!
+When the NavBar component is removed from the page (unmounts), we need to clean up and remove the listener.
+
+6. Complete flow with visual example:
+javascriptuseEffect(() => {
+  // Step 1: Define what to do when someone clicks
+  const handleClickOutside = event => {
+    if (galleryRef.current && !galleryRef.current.contains(event.target)) {
+      setIsGalleryOpen(false)
+    }
+  }
+
+  // Step 2: Start listening for clicks
+  document.addEventListener('mousedown', handleClickOutside)
+
+  // Step 3: Cleanup function (runs when component unmounts)
+  return () => {
+    document.removeEventListener('mousedown', handleClickOutside)
+  }
+}, [])
+Timeline:
+
+Component loads → addEventListener starts watching
+User clicks dropdown → handleClickOutside runs → Click is inside → Do nothing
+User clicks outside → handleClickOutside runs → Click is outside → Close dropdown
+Component unmounts → removeEventListener stops watching
+
+
+7. Simple analogy for everything:
+Think of your dropdown like a pop-up shop:
+javascriptconst galleryRef = useRef(null) 
+// This is like a GPS tracker for your shop
+
+<div ref={galleryRef}>
+// You attach the GPS tracker to your shop
+
+const handleClickOutside = event => {
+  if (!galleryRef.current.contains(event.target)) {
+    setIsGalleryOpen(false)
+  }
+}
+// This checks: "Did someone click outside my shop? If yes, close it."
+
+document.addEventListener('mousedown', handleClickOutside)
+// Start watching for clicks everywhere
+
+document.removeEventListener('mousedown', handleClickOutside)
+// Stop watching when shop closes permanently
+
+8. Testing your understanding:
+Question: What happens in this scenario?
+javascript// User clicks the "Gallery" button
+// galleryRef.current = <div> (the dropdown)
+// event.target = <button>Gallery</button>
+
+// Does galleryRef.current.contains(event.target) return true or false?
+Answer: TRUE! Because the button is INSIDE the div, so the dropdown stays open.
+
+Does this make sense now? Try to explain it back to me in your own words if you want to test your understanding! 😊
