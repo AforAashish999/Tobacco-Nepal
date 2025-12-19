@@ -7,8 +7,26 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    /* padding: 80px 0; */
 }
+
+/* RESPONSIVENESS - TABLET */
+@media(max-width:768px){
+    .company__title{
+        line-height: 1;
+    }
+    .company__image{
+        height: 200px;
+        width: 100%;
+    }
+    .company__para1{
+
+    }
+}
+   
+
+
+
+
 .company__description{
     padding: 0 24px;
 }
@@ -19,51 +37,22 @@
     margin-bottom: 30px;
     text-align: center;
 }
-.company__para1{
+.company__para{
     color: var(--color-gray-300);
     font-size: 18px;
     margin-bottom: 24px;
     /* font-weight: 500; */
     /* letter-spacing: 0.025em; */
-    word-spacing: 3.5px;
-    line-height: 1.6;
+    /* word-spacing: 3.5px;
+    line-height: 1.6; */
+    text-align: justify;
 }
-.company__para1--highlight{
+.company__para--highlight{
  color: var(--color-gray-300);
     font-weight: bold;
     text-decoration: underline;
 }
-.company__para1--space{
-    word-spacing: 9px;
-}
-.company__para2{
-    color: var(--color-gray-300);
-    font-size: 18px;
-    margin-bottom: 24px;
-     /* font-weight: 500;
-    letter-spacing: 0.025em;
-    word-spacing: 4px; */
-     line-height: 1.6;
-     word-spacing: 0.5px;
-}
-.company__para2--space{
-    word-spacing: 12px;
-}
-.company__para3{
-    color: var(--color-gray-300);
-    font-size: 18px;
-     /* font-weight: 500;
-    letter-spacing: 0.025em;
-    word-spacing: 4px; */
-     line-height: 1.6;
-     word-spacing: 3.9px;
-}
-.company__para3--space{
-    word-spacing: 9px;
-}
-.company__para3--spaceWide{
-    word-spacing: 17px;
-}
+
 .company__imageWrapper{
     /* background-color: aqua; */
     /* padding: 10px; */
@@ -71,10 +60,11 @@
     justify-content: center;
     align-items: center; */
     padding-top: 22px;
+    width: 100%;
+height: 100%;
 }
 .company__image{
-width: 100%;
-height: 100%;
+
 object-fit: cover;
 }
 .secondSection__endText{

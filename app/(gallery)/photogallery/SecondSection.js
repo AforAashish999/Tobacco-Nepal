@@ -8,7 +8,7 @@ import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 const fetcher = url => fetch(url).then(res => res.json());
 
 export default function SecondSection() {
-    const [category, setCategory] = useState("");
+    const [category, setCategory] = useState("");  
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 3;
     const categories = [

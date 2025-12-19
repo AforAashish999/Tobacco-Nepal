@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image"
 import PostImage from "../../public/blog_article_image.webp"
 
-export default function SecondSection() { 
+export default function SecondSection() {   
   return (
     <div className={styles.article} >
         <h1 className={styles.article__title} > Featured Articles </h1>

@@ -19,6 +19,15 @@
   text-align: center;
   margin-bottom: 20px;
 }
+
+@media(max-width:768px){
+  .hero__title{
+    font-size: 45px;
+  }
+  .hero__subTitle{
+    color: var(--color-gray-200);
+  }
+}
 .hero__linkWrapper {
   display: flex;
   gap: 18px;

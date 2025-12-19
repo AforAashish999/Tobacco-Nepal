@@ -1,0 +1,14 @@
+By default, a flex container tries to fit all its items in one single line, even if they overflow the container.
+
+.container {
+  display: flex;
+  flex-direction: row; /* default */
+  flex-wrap: nowrap;   /* default */
+}
+
+
+nowrap → everything stays on one line (default)
+
+wrap → items move to the next line if they don’t fit
+
+wrap-reverse → same as wrap, but lines go in reverse order

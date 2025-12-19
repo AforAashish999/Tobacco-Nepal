@@ -19,7 +19,7 @@ export default async function FeatureProducts() {
 
       {/* PRODUCT GRID */}
       <div
-        className=" p-5 grid grid-cols-5 gap-x-4 mt-5  ">
+        className=" p-5 grid lg:grid-cols-5 md:grid-cols-3 gap-x-4 mt-5  ">
         {
           // individual products
           filteredProducts.map((item) => (

@@ -2,7 +2,6 @@
   min-height: 500px;
     background-color: black;
     padding: 96px 64px 70px;
-    /* z-index: 1200; */
 }
 .content__heading{
     font-size: 36px;
@@ -11,7 +10,7 @@
        margin-bottom: 54px;
 }
 .content__subHeading{
-    font-size: 36px;
+    font-size: 36px;  
     color: #f70;
     font-weight: bold;
     margin: 32px 0 64px;
@@ -42,10 +41,22 @@
     margin-bottom: 64px;
 }
 .content__ending{
-     font-size: 18px;
+     font-size: 18px;  
     color: white;
      font-weight: bold;
        margin-top: 64px;
-       /* margin-bottom: 30px; */
-       /* text-align: center; */
+}
+
+/* RESPONSIVENESS - TABLET */
+@media(max-width:768px){
+    .content__subHeading{
+        text-align: justify;
+    }
+    .content{
+
+    }
+    .content__description{
+        text-align: justify;
+
+}
 }

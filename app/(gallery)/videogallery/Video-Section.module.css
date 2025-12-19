@@ -9,7 +9,12 @@
     overflow: hidden; */
   background-color: black;
 }
-
+/* RESPONSIVENESS - TABLET */
+@media(max-width:768px){
+  .video{
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
 .video__item {
   height: 100%;
   display: flex;

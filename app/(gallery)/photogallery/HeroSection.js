@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function HeroSection() {
     return (
-        <div className={styles.hero}>
+        <div className={styles.hero}>  
             <h1 className={styles.hero__title}>
                 Photo Gallery
             </h1>

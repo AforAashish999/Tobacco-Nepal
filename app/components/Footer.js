@@ -9,11 +9,12 @@ export default function Footer() {
     <div className='min-h-90 '>
             <div className="px- space-y-6 bg-[#150D06]  "> 
 
-            <div className='grid grid-cols-4 py-7 '>
+            <div className='grid grid-cols-4  py-7 md:grid-cols-none '>
 
-                <div className=" col-span-1 p-3 space-y-5 ">
+                <div className=" lg:col-span-1 md:col-span-4 p-3 space-y-5 ">
                   <h2 className="text-2xl font-bold text-[#FF7700] ">Tobacco<span className="text-[#FFC100] ">Nepal</span>  </h2>
-                  <p className="text-[#FFECB3]  max-w-56 text-justify ">Discover genuine Nepalese 
+                  <p className="text-[#FFECB3]  lg:max-w-56 md:w-full text-justify ">
+                    Discover genuine Nepalese 
                     tobacco items that arent found anywhere else. Experience
                      unique flavors that capture the spirit of Nepals cultural legacy.</p>
                      <div className="flex space-x-6">
@@ -35,16 +36,14 @@ export default function Footer() {
                    </ul>
                 </div>
 
-                <div className=" col-span-1 py-3  space-y-5">
+                <div className=" lg:col-span-1 md:col-span-2 py-3  space-y-5">
                     <h2 className="text-[#FF7700] text-lg font-bold"> Legal</h2>
                     <Link href="/legal"
-                    className="text-[#c28957] text-sm "
+                    className="text-[#c28957] text-sm  md:block md:max-w-[200px] "
                     > legal notice, privacy & compliance policy </Link>
                     </div>
 
-                    <div className="col-span-1">
-
-                    </div>
+                    <div className="col-span-1"></div>
                     
             </div>
             {/* notice */}

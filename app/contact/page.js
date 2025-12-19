@@ -5,7 +5,7 @@ import Map from './Map.js';
 
 export default function Page() {
   return (
-    <div>
+    <div className=' relative min-h-screen' >
       <HeroSection />
       <ContactPage />
       <Map />

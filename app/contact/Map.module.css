@@ -1,5 +1,5 @@
 .map {
-  height: 628px;
+  min-height: 628px;
   width: 100%;
   background-color: black;
   display: flex;
@@ -11,4 +11,12 @@
   width: 992px;
   border-radius: 7px;
   overflow: hidden;
+}
+
+@media(max-width:768px){
+  .map{
+    padding: 0px 15px;
+    align-items: center;
+  }
+
 }

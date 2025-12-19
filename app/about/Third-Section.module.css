@@ -1,119 +1,89 @@
-.principles{
-    background-color: black;
-    min-height: 40vh;
-    width: 100%;
-    padding: 80px 20px;
+.principles {
+  background-color: black;
+  min-height: 40vh;
+  width: 100%;
+  padding: 80px 20px;
 }
-.principles__title{
-    font-size: 48px;
-    margin-bottom: 40px;
-    text-align: center;
-    color: #EAB308;
-    font-weight: bolder;
-     letter-spacing: 0.025em;
+.principles__title {
+  font-size: 48px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #eab308;
+  font-weight: bolder;
 }
-.principles__grid{
-    min-height: 40vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+
+.principles__grid {
+  min-height: 40vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
-.principles__item{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    
-     transition: transform 0.2s ease-in;
+.principles__item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  transition: transform 0.2s ease-in;
 }
-.principles__item:hover{
-    transform: scale(1.05) ;
+.principles__item:hover {
+  transform: scale(1.05);
 }
-.principles__item:hover .principles__itemTitle{
-    color: #F59E0B;
+.principles__item:hover .principles__itemTitle {
+  color: #f59e0b;
 }
-.principles__item:hover .principles__iconWrapper{
-    box-shadow: 0 6px 10px -5px #EAB308
+.principles__item:hover .principles__iconWrapper {
+  box-shadow: 0 6px 10px -5px #eab308;
 }
-.principles__iconWrapper{
-    height: 80px;
-    width: 80px;
-    border-radius: 100%;
-    background-color: #D2863C;
-    display: flex;
+.principles__iconWrapper {
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+  background-color: #d2863c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.principles__icon {
+  font-size: 2rem;
+  color: white;
+}
+.principles__itemTitle {
+  font-size: 24px;
+  font-weight: bolder;
+  color: #eab308;
+}
+.principles__description {
+  color: var(--color-gray-300);
+  text-align: center;
+  max-width: 320px;
+}
+.principles__description--wide {
+  max-width: 360px;
+}
+
+/* RESPONSIVENESS - TABLET */
+@media (max-width: 768px) {
+  .principles {
+    padding: 30px 20px 10px;
+  }
+  .principles__grid {
+    gap: 20px;
+    height: 5vh;
+  }
+  .principles__item {
     justify-content: center;
-    align-items: center;
+    gap: 15px;
+  }
+  .principles__itemTitle {
+    text-align: center;
+    max-width: 200px;
+  }
+  .principles__description {
+    max-width: 200px;
+  }
+  .principles__description--wide {
+    max-width: none;
+  }
 }
-.principles__icon{
-    font-size: 2rem;
-    color: white;
-
-}
-.principles__itemTitle{
-    font-size: 24px;
-    font-weight: bolder;
-    color: #EAB308;
-}
-.principles__description{
-     color: var(--color-gray-300);
-     text-align: center;
-     max-width: 320px;
-     letter-spacing: 0.05em;
-     
-}
-.principles__description--wide{
-     max-width: 360px;
-}
-
-
-/* 
-.grid__innovation{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-  
-     transition: transform 0.2s ease-in;
-}
-.grid__innovation--description{
-     color: var(--color-gray-300);
-     text-align: center;
-      letter-spacing: 0.05em;
-      max-width: 320px;
-}
-.grid__innovation:hover{
-    transform: scale(1.05) ;
-}
-.grid__innovation:hover .grid__title{
-    color: #F59E0B;
-}
-.grid__innovation:hover .iconWrapper{
-   box-shadow: 0 6px 10px -5px #EAB308
-} */
-
-
-/* 
-.grid__sustainable{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-     transition: transform 0.2s ease-in;
-}
-.grid__sustainable--description{
-     color: var(--color-gray-300);
-     text-align: center;
-     letter-spacing: 0.05em;
-}
-.grid__sustainable:hover{
-    transform: scale(1.05) ;
-}
-.grid__sustainable:hover .grid__title{
-    color: #F59E0B;
-}
-.grid__sustainable:hover .iconWrapper{
-    box-shadow: 0 6px 10px -5px #EAB308
-} */

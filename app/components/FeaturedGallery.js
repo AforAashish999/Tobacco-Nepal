@@ -33,7 +33,7 @@ export default async function FeaturedGallery() {
                 </div>
 
                 {/* PICTURES */}
-                <div className="grid grid-cols-3 h-60 gap-x-5 rounded-xl items-center ">
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 min-h-60 gap-x-5 rounded-xl items-center ">
 
                     <div className="rounded-xl h-full w-full  ">
                     <Image src={Gallery1} alt="gallery pic" className=" h-full w-full rounded-xl " />

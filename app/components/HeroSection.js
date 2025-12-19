@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function HeroSection () {
+export default function HeroSection() {
   return (
     <div
       className="h-screen w-full relative
@@ -14,7 +14,8 @@ export default function HeroSection () {
         <h1 className='  text-[64px] font-bold text-[#DF954E] mb-2 '>
           Premium Tobacco
         </h1>
-        <p className='text-2xl font-medium leading-tight text-[#F7E2A2] max-w-3xl text-center mb-8 '>
+        <p className='text-2xl font-medium leading-tight text-[#F7E2A2] text-center mb-8
+         lg:max-w-3xl md:max-w-2xl'>
           Experience the finest quality tobacco products . Our traditional
           methods and sustainable practices ensure exceptional quality in every
           product.

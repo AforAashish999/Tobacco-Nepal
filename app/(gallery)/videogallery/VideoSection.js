@@ -10,7 +10,7 @@ export default function VideoSection() {
                         className={styles.video__content} />
                 </div>
                 <div className={styles.video__description} >
-                    <h1 className={styles.video__heading} >
+                    <h1 className={styles.video__heading} > 
                         Tobacco Leaves
                     </h1>
                     <h2 className={styles.video__subHeading} >

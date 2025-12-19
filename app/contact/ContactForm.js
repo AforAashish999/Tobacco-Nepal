@@ -4,7 +4,7 @@ import { LuAsterisk } from "react-icons/lu";
 export default function ContactForm() {
     return (
         <div className={styles.contact}>
-            <div>
+            <div className={styles.contact__headingWrapper} >
                 <h1 className={styles.contact__heading} > Send us a message</h1>
                 <h2 className={styles.contact__subHeading}> Fill out the form below and our team will get back to you within 24 hours.</h2>
             </div>

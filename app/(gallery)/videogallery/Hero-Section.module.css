@@ -19,6 +19,13 @@
   text-align: center;
   margin-bottom: 20px;
 }
+
+/* /RESPONSIVENESS-TABLET */
+@media(max-width:768px){
+  .hero__title{
+    font-size: 48px;
+  }
+}
 .hero__linkWrapper {
   display: flex;
   gap: 18px;

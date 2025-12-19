@@ -44,13 +44,13 @@ export default function NavBar () {
   return (
     <div className='sticky top-0 z-500  '>
       <nav className='bg-[#1f1f1f] '>
-        <ul className='p-4'>
+        <ul className='lg:p-4 md:p-0 '>
           <li className='flex justify-between items-center'>
-            <Link href='/'>
+            <Link className='relative w-25 h-14 hover:scale-105' href='/'>
               <Image
                 src={Logo}
                 alt='Tobacco Nepal Logo'
-                className='w-25 h-14 hover:scale-105'
+                fill
               />
             </Link>
 

@@ -40,6 +40,21 @@
   gap: 48px;
     padding: 32px;
 }
+
+
+/* RESPONSIVE TABLET */
+@media(max-width:768px){
+  .products__imagesWrapper{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .products__categorieBtn{
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .products__button{
+     margin-bottom: 8px;
+  }
+}
 .products__empty{
     grid-column: span 3;
   column-span: all;
