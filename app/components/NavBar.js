@@ -83,7 +83,7 @@ export default function NavBar () {
                     </Link>
                   )}
                 </li>
-              ))}
+              ))}  
             </ul>
 
             <Link

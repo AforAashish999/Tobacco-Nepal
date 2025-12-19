@@ -1,0 +1,205 @@
+why does border-radius doesnt work 
+.video{
+    padding: 32px;
+    height:421.33px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.video__item{
+    height: 100%;
+background-color: green;
+display: flex;
+flex-direction: column;
+}
+.video__video{
+    background-color: red;
+    flex: 1;
+    position: relative;
+}
+.video__content{
+    height: 100%;
+    width: 100%;
+position: absolute;
+    object-fit: cover;
+}
+.video__description{
+    padding: 16px
+}
+.video__heading{
+        color: var(--color-orange-400);
+        font-size: 18px;
+        font-weight: 600;
+}
+.video__subHeading{
+    font-size: 14px;
+    color: var(--color-gray-300);
+}
+explain me the concept so i dont get confused in future
+
+This is a very good question, and the confusion is extremely common. The issue is not a bug and not specific to video — it is about how border-radius and clipping actually work in CSS layouts.
+
+I’ll explain the concept first, then map it directly to your code, so you can reason about this correctly in the future.
+
+Core concept (memorize this)
+
+border-radius only affects the element it is applied to.
+It does NOT automatically clip grandchildren unless overflow rules allow it.
+
+More precisely:
+
+border-radius changes the shape of an element’s border box
+
+Clipping only happens if overflow is not visible
+
+Absolutely positioned children ignore the parent’s border unless clipped
+
+Why your border-radius does not appear
+
+You applied this:
+
+.video {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+
+But the visual element you care about is not the .video container.
+
+Your visual hierarchy:
+.video (grid container)
+└── .video__item (green)
+    ├── .video__video (red, relative)
+    │   └── <video> (absolute, filling)
+    └── .video__description
+
+
+The rounded corners are on .video,
+but the visible content (red + video) lives inside grid children that:
+
+stretch edge-to-edge
+
+are not themselves rounded
+
+are not clipped at their own boundaries
+
+So visually:
+
+the grid container is rounded
+
+but the children completely fill it
+
+so the corners look square
+
+Absolute positioning makes this more obvious
+
+This is the key detail you must remember:
+
+Absolutely positioned elements do not respect border-radius unless the element that has the radius is also clipping them.
+
+Your <video>:
+
+.video__content {
+  position: absolute;
+  inset: 0;
+}
+
+
+It is clipped only by:
+
+its nearest ancestor with overflow: hidden
+
+That ancestor is .video__video, not .video.
+
+But .video__video has no border-radius.
+
+The correct mental model
+Border-radius is not inherited
+
+Each layer must define its own clipping if it visually matters.
+
+Think in layers:
+
+Layer	Has radius?	Has overflow hidden?	Clips children?
+.video	Yes	Yes	Yes
+.video__item	No	No	No
+.video__video	No	No	No
+<video>	No	N/A	N/A
+
+So nothing visually clips at the video level.
+
+Correct solutions (choose based on intent)
+✅ Solution 1: Radius where the visual edge actually is (recommended)
+
+If each card should be rounded:
+
+.video__item {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+
+This is the most correct approach for card layouts.
+
+✅ Solution 2: Radius only on the video area
+
+If only the video needs rounding:
+
+.video__video {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+
+Now the absolutely positioned <video> is clipped correctly.
+
+❌ Solution that looks right but is conceptually wrong
+
+Relying on .video (grid container) to clip children:
+
+.video {
+  border-radius: 12px;
+}
+
+
+This only works if:
+
+children do not touch the edges
+
+no absolute positioning is involved
+
+Not your case.
+
+One-sentence rule for the future
+
+Apply border-radius + overflow: hidden to the element that visually touches the edge of what you want rounded.
+
+Never apply it “higher up” and expect it to trickle down.
+
+Why images sometimes “work” but videos don’t
+
+Images often appear to respect radius because:
+
+they are not absolutely positioned
+
+they size naturally
+
+they sit inside padded containers
+
+Videos with position: absolute expose the real CSS rules.
+
+Final takeaway (important)
+
+border-radius is local, not global
+
+Absolute children ignore radius unless clipped
+
+Clip at the visual boundary, not the layout container
+
+Grid containers are rarely the right place for rounding
+
+Once you internalize this, border-radius bugs stop being confusing.

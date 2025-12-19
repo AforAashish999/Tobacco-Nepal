@@ -1,0 +1,28 @@
+h1 {
+  line-height: 1.15;
+}
+Try values in this range:
+
+1.1 → very tight
+
+1.15 → ideal for headings
+
+1.25 → normal heading spacing
+
+Avoid normal for large fonts.
+
+
+this inn tailwind
+Why Tailwind doesn’t include 1.15 by default
+
+Tailwind ships typographic-safe values:
+
+leading-none → 1
+
+leading-tight → 1.25
+
+leading-snug → 1.375
+
+leading-normal → 1.5
+
+1.15 is design-specific, so Tailwind expects you to define it.

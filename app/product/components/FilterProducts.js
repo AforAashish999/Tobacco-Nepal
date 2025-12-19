@@ -1,5 +1,5 @@
 import useSWR from 'swr'
-import { useState } from 'react'
+import { useState,useEffect,useRef } from 'react'
 import SearchSort from './SearchSort'
 import ProductCard from '../../components/ProductCard.js'
 import Pagination from '../../components/Pagination.js'
@@ -9,10 +9,20 @@ import Popup from './Popup.js'
 const fetcher = url => fetch(url).then(res => res.json())
 
 export default function FilterProducts () {
-  const [category, setCategory] = useState('')
-  const [search, setSearch] = useState('')
-  const [currentPage, setCurrentPage] = useState(1)
+  const productsRef = useRef(null);
+  const [category, setCategory] = useState('');
+  const [search, setSearch] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [sortOrder, setSortOrder] = useState('desc')
 
+ //scroll to top when page changes
+  useEffect(() => {
+  productsRef.current?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  })
+}, [currentPage])
+    
   const itemsPerPage = 10
   const categories = [
     { label: 'All Categories', value: '' },
@@ -24,8 +34,14 @@ export default function FilterProducts () {
   const params = new URLSearchParams()
   if (category) params.append('category', category)
   if (search) params.append('name_like', search.toLowerCase())
+    //sorting
+    params.append('_sort', 'createdAt');
+    params.append('_order', sortOrder);
 
-  const url = `${process.env.NEXT_PUBLIC_API}/products${params.toString() ? `?${params.toString()}` : ''}`
+      const query = params.toString();
+
+  // const url = `${process.env.NEXT_PUBLIC_API}/products${params.toString() ? `?${params.toString()}` : ''}`
+   const url = `${process.env.NEXT_PUBLIC_API}/products${query ? `?${query}` : ''}`
   const { data, error, isLoading, mutate } = useSWR(url, fetcher, {
     keepPreviousData: true
   })
@@ -39,19 +55,16 @@ export default function FilterProducts () {
   const paginatedData = data.slice(startIndex, startIndex + itemsPerPage)
 
   //text logic
-  const currentCategoryName =
-    categories.find(item => item.value === category)?.label || 'All Products'
+  const currentCategoryName = categories.find(item => item.value === category)?.label || 'All Products'
 
   return (
-    <div className=' min-h-screen bg-black px-6  flex flex-col space-y-10   '>
-      <SearchSort search={search} setSearch={setSearch} />
+    <div ref={productsRef} className=' min-h-screen bg-black px-6  flex flex-col space-y-10   '>
+      <SearchSort 
+      search={search} setSearch={setSearch}
+       sortOrder={sortOrder}  setSortOrder={setSortOrder} setCurrentPage={setCurrentPage} />
 
           {/* CATEGORY POPUP */}
-      <Popup
-        category={category}
-        setCategory={setCategory}
-        currentCategoryName={currentCategoryName}
-      />
+      <Popup category={category}  setCategory={setCategory} currentCategoryName={currentCategoryName}/>
 
             {/* NUMBER OF PRODUCTS */}
       <h1 className='text-[#d2863c] font-semibold text-lg text-center'>
