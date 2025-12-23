@@ -67,20 +67,20 @@ export default function FilterProducts () {
       <Popup category={category}  setCategory={setCategory} currentCategoryName={currentCategoryName}/>
 
             {/* NUMBER OF PRODUCTS */}
-      <h1 className='text-[#d2863c] font-semibold text-lg text-center'>
+      <h1 className='text-[#d2863c] font-medium lg:font-semibold text-lg  text-center'>
         Showing Products{' '}
-        <span className='text-[#EAB308]'>{paginatedData.length}</span> of{' '}
-        <span className='text-[#EAB308]'>{data.length} </span>
+        <span className='text-[#EAB308] font-bold lg:font-normal'>{paginatedData.length}</span> of{' '}
+        <span className='text-[#EAB308] font-bold lg:font-normal'>{data.length} </span>
         {category && <span> in "{currentCategoryName} " </span>}
       </h1>
 
       {/* CATEGORY BUTTONS */}
-      <div className='h-24 p-2 flex space-x-5 '>
+      <div className='lg:h-24 lg:p-2 lg:flex lg:space-x-5 '>
         {categories.map(btn => (
           <button
             key={btn.value}
             onClick={() => setCategory(btn.value)}
-            className={` text-lg  font-semibold rounded-lg cursor-pointer py-2 px-4  w-[238.53px] transform transition-all ease-in-out  duration-300   
+            className={` text-lg  font-semibold rounded-lg cursor-pointer lg:py-2 lg:px-4  lg:w-[238.53px] transform transition-all ease-in-out  duration-300   
                            ${ category === btn.value
                                ? 'bg-yellow-100 text-[#EAB308] translate-y-0 '
                                : 'bg-white text-gray-700 hover:text-[#EAB308] hover:bg-yellow-50 hover:-translate-y-1 '} `
@@ -92,7 +92,7 @@ export default function FilterProducts () {
       </div>
 
       {/* PRODUCTS */}
-      <div className='grid grid-cols-4  gap-12 w-full mb-16 '>
+      <div className='grid  grid-cols-1 px-2 lg:px-0 gap-6 lg:grid-cols-4  lg:gap-12 w-full mb-16  '>
         {paginatedData.length === 0 ? <EmptyProduct />
           : paginatedData.map(item => <ProductCard key={item.id} item={item} />)
         }

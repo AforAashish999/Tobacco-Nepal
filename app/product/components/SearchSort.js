@@ -37,36 +37,38 @@ export default function SearchSort ({
   ]
   return (
     <div className='flex flex-col '>
-      <div className=' w-full flex gap-x-4 relative '>
+      <div className=' w-full lg:flex gap-x-4 relative px-2 pt-10 space-y-3 lg:space-y-none '>
         {/* SEARCH BOX */}
-        <div className='flex-1 bg-[#2d2d2d] rounded-xl border-yellow-300/40 border flex px-2 py-3 items-center '>
-          <IoIosSearch className='text-[#c99c15] text-2xl font-bold ' />
+        <div className='lg:flex-1 p-2 bg-[#2d2d2d] rounded-xl border-yellow-300/40 border flex lg:px-2 lg:py-3 items-center '>
+          <IoIosSearch className='text-[#c99c15] text-3xl lg:text-2xl font-bold ' />
           <input
-            placeholder='search products...'
-            className='placeholder-gray-400 text-white w-full focus:outline-0 pl-2  caret-white  '
+            placeholder='Search products...'
+            className='placeholder-gray-400 text-white text-xs lg:text-base w-full focus:outline-0 pl-2  caret-white  '
             value={inputValue}
             onChange={e => setInputValue(e.target.value)}
           />
-          <button className='font-medium bg-[#EAB308] py-2 px-5 rounded-lg hover:bg-yellow-400 cursor-pointer '>
+          <button className=' font-bold py-2 px-5 rounded-md lg:font-medium bg-[#EAB308] text-xs lg:text-base lg:py-2 lg:px-5 lg:rounded-lg hover:bg-yellow-400 cursor-pointer '>
             Search
           </button>
         </div>
 
         {/* SORT BOX */}
-        <div className='w-36 bg-[#181818] rounded-xl border-yellow-300/40 border flex items-center py-2 px-1 '>
+        <div className='lg:w-36 bg-[#181818] rounded-xl border-yellow-300/40 border flex items-center p-3 '>
           <CgSortAz className='text-[#c99c15] text-3xl ' />
           <button
             onClick={() => setIsDropActive(prev => !prev)}
-            className='bg-[#2d2d2d] border-yellow-300/30 border-2 rounded-xl text-white text-sm p-2 cursor-pointer flex gap-1'
+            className={`bg-[#2d2d2d] focus:outline-none lg:border-yellow-300/40 lg:border-2 rounded-xl text-gray-200
+             lg:text-white text-sm py-1 px-3 w-full lg:p-2 cursor-pointer flex items-center gap-1 justify-between border-transparent border
+             transition-all duration-150 ease-in ${isDropActive === true? 'border-yellow-300/40 border' : '' } `}
           >
-            <div className='font-medium'> {active} </div>
+            <div className='text-xs lg:text-base lg:font-medium'> {active} </div>
             <MdOutlineKeyboardArrowDown className='text-xl text-[#eab308] ' />
           </button>
         </div>
 
         {isDropActive && (
           <div
-            className='text-white absolute cursor-pointer right-2 top-15 w-32 bg-[#2d2d2d] border-yellow-300/40 border
+            className='text-white absolute cursor-pointer right-6 lg:right-2 top-37 lg:top-15  w-3/4 lg:w-32 bg-[#2d2d2d] border-yellow-300/40 border
             rounded-xl p-1 space-y-1 '
           >
             {dropItems.map(item => (
@@ -76,8 +78,8 @@ export default function SearchSort ({
                 className={`py-2 px-3 rounded-md text-sm 
                      ${
                        active === item.label
-                         ? 'bg-[#eab308] text-black'
-                         : 'text-white hover:bg-[#eab308] hover:text-black'
+                         ? 'bg-[#eab308] text-black text-xs font-medium lg:text-base'
+                         : 'text-white hover:bg-[#eab308] hover:text-black text-xs font-medium lg:text-base'
                      } `}
               >
                 {item.label}
@@ -98,13 +100,13 @@ export default function SearchSort ({
               transition={{ duration: 0.5 }}
             >
               <div
-                className='bg-[#D2863C]/20 text-[#d2863c] text-sm font-medium mt-6
+                className='bg-[#D2863C]/20 text-[#d2863c] text-[10px] lg:text-sm font-medium lg:mt-6 ml-10
                   py-2 px-4 rounded-2xl flex gap-2 items-center w-fit '
               >
-                <PiSortAscendingBold />
+                <PiSortAscendingBold className='text-sm' />
                 <p>Sort: Oldest First </p>
                 <button onClick={() => setActive('Latest')}>
-                  <IoClose className='text-lg cursor-pointer hover:text-[#e4a260] ' />
+                  <IoClose className=' text-xs lg:text-lg cursor-pointer hover:text-[#e4a260] ' />
                 </button>
               </div>
             </motion.div>
