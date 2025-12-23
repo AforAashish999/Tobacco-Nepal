@@ -11,7 +11,8 @@ export default function HeroSection() {
 
       {/* content */}
       <div className='absolute z-30 h-screen w-screen flex flex-col justify-center items-center pb-5 '>
-        <h1 className=' text-[42px] max-w-xs leading-tight  text-center md:text-nowrap md:text-center md:text-[64px] font-bold text-[#DF954E] mb-2 '>
+        <h1 className=' text-[42px] max-w-xs leading-tight  text-center md:text-nowrap 
+         md:text-[64px] md:max-w-xl font-bold text-[#DF954E] mb-2 '>
           Premium Tobacco
         </h1>
         <p className='text-base text-center md:text-2xl  md:font-medium leading-relaxed md:leading-tight text-[#F7E2A2] md:text-center mb-8

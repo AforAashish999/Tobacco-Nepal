@@ -20,11 +20,11 @@ export default async function FeaturedGallery() {
 {/* outer div of phot and video */}
 <div className="space-y-25"> 
             {/* Photo gallery */}
-            <div className="space-y-3">
+            <div className="space-y-3 md:space-y-10">
 
                 {/* name and arrow */}
-                <div className="flex justify-between text-[#EBCB66] px-4 ">
-                    <h2 className="font-medium text-lg"> Photo Gallery </h2>
+                <div className="flex justify-between text-[#EBCB66] px-4 font-medium text-lg md:text-xl md:font-bold  ">
+                    <h2 className=""> Photo Gallery </h2>
                     <Link href="/photogallery"
                         className="  font-medium  flex items-center hover:text-yellow-300  ">
                         <h2 className="">View All</h2>
@@ -51,10 +51,10 @@ export default async function FeaturedGallery() {
             </div>
 
                 {/* VIDEO GALLERY */}
-                <div className=" space-y-3">
+                <div className=" space-y-3 md:space-y-10">
                     {/* name and arrow */}
-                <div className="flex justify-between text-[#EBCB66] px-4 ">
-                    <h2 className="font-medium text-lg"> Video Gallery </h2>
+                <div className="flex justify-between text-[#EBCB66] px-4 font-medium text-lg md:text-xl md:font-bold">
+                    <h2 className=""> Video Gallery </h2>
                     <Link href="/videogallery"
                         className="  font-medium tracking-wide flex items-center hover:text-yellow-300  ">
                         <h2 className="">View All</h2>

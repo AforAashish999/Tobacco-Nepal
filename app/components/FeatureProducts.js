@@ -15,7 +15,7 @@ export default async function FeatureProducts() {
 
       <div className='flex flex-col items-center justify-center space-y-8'>
         <h1 className='text-5xl text-[#EAB308] font-bold text-center md:text-nowrap  md:max-w-none leading-tight md:leading-none '>Our Featured Products</h1>
-        <h2 className='text-lg text-[#D2863C] max-w-[330px] font-medium text-center  '>Experience rich, smooth tobacco made using time-honored methods and sustainable practices.</h2>
+        <h2 className='text-lg text-[#D2863C] max-w-[330px] md:max-w-2xl font-medium text-center  '>Experience rich, smooth tobacco made using time-honored methods and sustainable practices.</h2>
       </div>
 
       {/* PRODUCT GRID */}
