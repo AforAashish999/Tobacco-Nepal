@@ -17,62 +17,63 @@ export default async function FeaturedGallery() {
                     Discover how we grow, process, and share our tobacco through short videos that
                     highlight our story, people, and passion.</p>
             </div>
-{/* outer div of phot and video */}
-<div className="space-y-25"> 
-            {/* Photo gallery */}
-            <div className="space-y-3 md:space-y-10">
+            {/* outer div of phot and video */}
+            <div className="space-y-25">
+                {/* Photo gallery */}
+                <div className="space-y-3 md:space-y-10">
 
-                {/* name and arrow */}
-                <div className="flex justify-between text-[#EBCB66] px-4 font-medium text-lg md:text-xl md:font-bold  ">
-                    <h2 className=""> Photo Gallery </h2>
-                    <Link href="/photogallery"
-                        className="  font-medium  flex items-center hover:text-yellow-300  ">
-                        <h2 className="">View All</h2>
-                        <MdOutlineArrowRightAlt className="text-xl" />
-                    </Link>
+                    {/* name and arrow */}
+                    <div className="flex justify-between text-[#EBCB66] px-4 font-medium text-lg md:text-xl md:font-bold  ">
+                        <h2 className=""> Photo Gallery </h2>
+                        <Link href="/photogallery"
+                            className="  font-medium  flex items-center hover:text-yellow-300  ">
+                            <h2 className="">View All</h2>
+                            <MdOutlineArrowRightAlt className="text-xl" />
+                        </Link>
+                    </div>
+
+                    {/* PICTURES */}
+                    <div className="grid grid-cols-1 gap-y-5 md:space-y-none
+                     md:grid-cols-2 lg:grid-cols-3  min-h-60 gap-x-3 rounded-xl  ">
+
+                        <div className="rounded-xl h-full w-full  ">
+                            <Image src={Gallery1} alt="gallery pic" className=" h-full w-full rounded-xl " />
+                        </div>
+
+                        <div className="rounded-xl h-full w-full  ">
+                            <Image src={Gallery2} alt="gallery pic" className=" h-full w-full rounded-xl " />
+                        </div>
+
+                        <div className="rounded-xl h-full w-full ">
+                            <Image src={Gallery3} alt="gallery pic" className=" h-full w-full rounded-xl " />
+                        </div>
+
+                    </div>
                 </div>
-
-                {/* PICTURES */}
-                <div className="grid grid-cols-1 space-y-10 md:space-y-none lg:grid-cols-3 md:grid-cols-2 min-h-60 gap-x-5 rounded-xl items-center ">
-
-                    <div className="rounded-xl h-full w-full  ">
-                    <Image src={Gallery1} alt="gallery pic" className=" h-full w-full rounded-xl " />
-                    </div>
-
-                    <div className="rounded-xl h-full w-full  ">
-                        <Image src={Gallery2} alt="gallery pic" className=" h-full w-full rounded-xl " />
-                    </div>
-
-                    <div className="rounded-xl h-full w-full ">
-                        <Image src={Gallery3} alt="gallery pic" className=" h-full w-full rounded-xl " />
-                    </div>
-
-                </div>
-            </div>
 
                 {/* VIDEO GALLERY */}
                 <div className=" space-y-3 md:space-y-10">
                     {/* name and arrow */}
-                <div className="flex justify-between text-[#EBCB66] px-4 font-medium text-lg md:text-xl md:font-bold">
-                    <h2 className=""> Video Gallery </h2>
-                    <Link href="/videogallery"
-                        className="  font-medium tracking-wide flex items-center hover:text-yellow-300  ">
-                        <h2 className="">View All</h2>
-                        <MdOutlineArrowRightAlt className="text-xl" />
-                    </Link>
-                </div>
-                
-                {/* video */}
-                <div className="h-65 md:w-90 ">
-                    <video src="https://res.cloudinary.com/dcds6y8vf/video/upload/v1753163547/VideoGallery/u22lb56hmgfi5ezq1pl3.mp4"
-                    controls 
-                    className="h-full w-full object-cover rounded-xl"/>
+                    <div className="flex justify-between text-[#EBCB66] px-4 font-medium text-lg md:text-xl md:font-bold">
+                        <h2 className=""> Video Gallery </h2>
+                        <Link href="/videogallery"
+                            className="  font-medium tracking-wide flex items-center hover:text-yellow-300  ">
+                            <h2 className="">View All</h2>
+                            <MdOutlineArrowRightAlt className="text-xl" />
+                        </Link>
+                    </div>
 
-                  
-                </div>
+                    {/* video */}
+                    <div className="h-65 md:w-90 ">
+                        <video src="https://res.cloudinary.com/dcds6y8vf/video/upload/v1753163547/VideoGallery/u22lb56hmgfi5ezq1pl3.mp4"
+                            controls
+                            className="h-full w-full object-cover rounded-xl" />
+
+
+                    </div>
                 </div>
 
-                </div>
+            </div>
         </div>
 
     )

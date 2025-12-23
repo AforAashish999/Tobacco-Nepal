@@ -4,7 +4,8 @@ import StoryImage from '../../public/ourstory.webp'
 
 export default function Story () {
   return (
-    <div className='min-h-screen grid grid-cols-1 md:grid-rows-2  bg-black px-4 pt-25 lg:pb-10 md:pb-0 gap-x-6'>
+    <div className='min-h-screen grid grid-cols-1 md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-none
+      bg-black px-4 lg:pt-25 md:pb-0 gap-x-6'>
 
       <div className='bg-amber col-span-1 py-15 lg:pl-10 md:pl-0 flex flex-col justify-between md:justify-around md:py-20 space-y-10 md:space-y-0'>
         <h1 className='text-5xl font-bold text-[#F8985F] lg:mb-8 mb:mb-0 '>Our Story</h1>
