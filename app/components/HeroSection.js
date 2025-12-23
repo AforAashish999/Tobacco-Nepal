@@ -4,33 +4,34 @@ import Link from 'next/link'
 export default function HeroSection() {
   return (
     <div
-      className="h-screen w-full relative
+      className="h-screen  w-full relative
     bg-[url('/heroSectionImage.jpg')] bg-cover bg-center "
     >
-      <div className='h-screen w-screen bg-black/74 z-10 absolute backdrop-blur-sm '></div>
+      <div className='h-screen w-full bg-black/74 z-10 absolute backdrop-blur-sm '></div>
 
       {/* content */}
       <div className='absolute z-30 h-screen w-screen flex flex-col justify-center items-center pb-5 '>
-        <h1 className='  text-[64px] font-bold text-[#DF954E] mb-2 '>
+        <h1 className=' text-[42px] max-w-xs leading-tight  text-center md:text-nowrap md:text-center md:text-[64px] font-bold text-[#DF954E] mb-2 '>
           Premium Tobacco
         </h1>
-        <p className='text-2xl font-medium leading-tight text-[#F7E2A2] text-center mb-8
-         lg:max-w-3xl md:max-w-2xl'>
+        <p className='text-base text-center md:text-2xl  md:font-medium leading-relaxed md:leading-tight text-[#F7E2A2] md:text-center mb-8
+               max-w-[300px] md:max-w-2xl lg:max-w-3xl '>
           Experience the finest quality tobacco products . Our traditional
           methods and sustainable practices ensure exceptional quality in every
           product.
         </p>
 
-        <div className='flex items-center space-x-4 mt-7'>
+        <div className='flex items-center  space-x-4 mt-7'>
           <Link
             href='/products'
-            className='bg-[#EAB308] px-6 py-2 text-lg font-bold rounded-md hover:bg-yellow-300'
+            className='bg-[#EAB308] px-4 py-3 md:px-6 md:py-2 text-sm md:text-lg font-bold rounded-md hover:bg-yellow-300'
           >
             View Products
           </Link>
           <Link
             href='/about'
-            className='border-gray-400 border text-white h-[44.33px] bg-black px-6 py-2 font-bold rounded-lg hover:bg-neutral-700 '
+            className='border-gray-100 border text-white h-[44.33px] bg-black
+             px-4 py-2 md:px-6 md:py-2  font-bold rounded-lg hover:bg-neutral-700 '
           >
             {' '}
             Learn More{' '}

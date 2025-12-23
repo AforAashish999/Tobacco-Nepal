@@ -9,9 +9,9 @@ export default function Footer() {
     <div className='min-h-90 '>
             <div className="px- space-y-6 bg-[#150D06]  "> 
 
-            <div className='grid grid-cols-4  py-7 md:grid-cols-none '>
+            <div className='grid grid-cols-2 md:grid-cols-4  py-7  '>
 
-                <div className=" lg:col-span-1 md:col-span-4 p-3 space-y-5 ">
+                <div className="col-span-2  lg:col-span-1 md:col-span-4 p-3 space-y-5 ">
                   <h2 className="text-2xl font-bold text-[#FF7700] ">Tobacco<span className="text-[#FFC100] ">Nepal</span>  </h2>
                   <p className="text-[#FFECB3]  lg:max-w-56 md:w-full text-justify ">
                     Discover genuine Nepalese 
@@ -48,15 +48,15 @@ export default function Footer() {
             </div>
             {/* notice */}
             <div className="px-4" > 
-            <div className="flex items-center justify-center bg-[#522D0C] p-4 rounded-lg space-x-3">
-                <MdError className="text-[32px] text-amber-700 " />
-                <p className="text-white font-medium  "> Warning: These products contain Nicotine. Nicotine is an addictive chemical.</p>
+            <div className="flex items-center justify-center bg-[#522D0C] p-2 md:p-4 rounded-lg space-x-3">
+                <MdError className="text-8xl md:text-[32px] text-amber-700 " />
+                <p className="text-white font-medium max-w-xs md:max-w-none text-center "> Warning: These products contain Nicotine. Nicotine is an addictive chemical.</p>
             </div>
             </div>
 
             {/* copyright */}
             <div className="p-8 flex justify-center border-gray-700 border-t">
-                <p className="text-white text-xs"> All Right Reserved @<span className="font-bold">Uchha Himal Product Pvt. Ltd.</span></p>
+                <p className="text-gray-200 md:text-white text-xs"> All Right Reserved @<span className="font-bold">Uchha Himal Product Pvt. Ltd.</span></p>
             </div>
             </div>
     </div>

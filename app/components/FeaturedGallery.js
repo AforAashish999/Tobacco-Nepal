@@ -33,7 +33,7 @@ export default async function FeaturedGallery() {
                 </div>
 
                 {/* PICTURES */}
-                <div className="grid lg:grid-cols-3 md:grid-cols-2 min-h-60 gap-x-5 rounded-xl items-center ">
+                <div className="grid grid-cols-1 space-y-10 md:space-y-none lg:grid-cols-3 md:grid-cols-2 min-h-60 gap-x-5 rounded-xl items-center ">
 
                     <div className="rounded-xl h-full w-full  ">
                     <Image src={Gallery1} alt="gallery pic" className=" h-full w-full rounded-xl " />
@@ -51,7 +51,7 @@ export default async function FeaturedGallery() {
             </div>
 
                 {/* VIDEO GALLERY */}
-                <div className="bg-green- space-y-3">
+                <div className=" space-y-3">
                     {/* name and arrow */}
                 <div className="flex justify-between text-[#EBCB66] px-4 ">
                     <h2 className="font-medium text-lg"> Video Gallery </h2>
@@ -63,7 +63,7 @@ export default async function FeaturedGallery() {
                 </div>
                 
                 {/* video */}
-                <div className="h-65 w-90 ">
+                <div className="h-65 md:w-90 ">
                     <video src="https://res.cloudinary.com/dcds6y8vf/video/upload/v1753163547/VideoGallery/u22lb56hmgfi5ezq1pl3.mp4"
                     controls 
                     className="h-full w-full object-cover rounded-xl"/>

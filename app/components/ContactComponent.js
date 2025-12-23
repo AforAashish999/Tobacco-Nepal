@@ -8,7 +8,7 @@ export default function ContactComponent() {
 
                 <div className="flex flex-col items-center  space-y-7">
                <h1 className="text-5xl font-bold text-[#fbbf8a]"> Get In Touch</h1>
-               <p className="text-xl max-w-3xl text-center text-[#f98c2c]  font-medium">
+               <p className="text-xl max-w-[330px] md:max-w-3xl text-center text-[#f98c2c]  font-medium">
                 Discover the best assortment of high-quality tobacco products, carefully chosen for enthusiasts
                  who appreciate authenticity, heritage, and workmanship.
                </p>
@@ -16,11 +16,11 @@ export default function ContactComponent() {
 
                <div className="flex items-center justify-center space-x-4"> 
                <Link href="/contact"
-               className="bg-[#EAB308] px-5.5 py-2 text-lg font-bold rounded-md hover:bg-yellow-300">
+               className="bg-[#EAB308] p-3 md:px-5.5 md:py-2 text-base md:text-lg font-bold rounded-md hover:bg-yellow-300">
                Contact Us
                </Link>
                <Link href="/about"
-               className="border-[#EAB308] text-sm border-2 text-[#EAB308] bg-black px-5 py-2.5 font-semibold rounded-md hover:bg-neutral-700 "
+               className="border-[#EAB308] text-sm border-2 text-[#EAB308] bg-black px-5 py-3 md:py-2.5 font-semibold rounded-md hover:bg-neutral-700 "
                > Learn More </Link>
                </div>
             </div>

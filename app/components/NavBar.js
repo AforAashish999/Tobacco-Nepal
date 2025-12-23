@@ -42,8 +42,8 @@ export default function NavBar () {
   }, [])
 
   return (
-    <div className='sticky top-0 z-500  '>
-      <nav className='bg-[#1f1f1f] '>
+    <div className='sticky top-0 z-500 bg-[#1f1f1f]   '>
+      <nav className=''>
         <ul className='lg:p-4 md:p-0 '>
           <li className='flex justify-between items-center'>
             <Link className='relative w-25 h-14 hover:scale-105' href='/'>
@@ -87,7 +87,7 @@ export default function NavBar () {
             </ul>
 
             <Link
-              className='font-bold  px-6 py-[7px] bg-[#EAB308] rounded-sm hover:bg-[#d4a007] transition-all duration-200'
+              className='font-bold  md:px-6 md:py-2 bg-[#EAB308] rounded-sm hover:bg-[#d4a007] transition-all duration-200'
               href='/contact'
             >
               Inquire Now
