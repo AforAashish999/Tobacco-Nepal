@@ -1,5 +1,6 @@
 .hero {
-  height: 470px;
+  min-height: 470px;
+  width: 100%;
   background-color: black;
   position: relative;
   background-image: url('/blog_article_image.webp');
@@ -94,5 +95,28 @@
   }
   .hero__content {
     padding: 300px 0;
+  }
+}
+
+/* RESPONSIVENESS - mobile */
+@media (max-width: 378px) {
+  .hero__title {
+    font-size: 30px;
+    padding: 0px 10px;
+  }
+  .hero__personDetails {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero {
+   
+    
+    z-index: 800;
+  }
+  .hero__content {
+    position: relative;
+    z-index: 20;
+ 
+
   }
 }

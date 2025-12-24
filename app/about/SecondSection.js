@@ -1,7 +1,7 @@
 import styles from './Second-Section.module.css'
 
 import React from 'react'
-
+  
 export default function SecondSection () {
   return (
     <div className={styles.main}>

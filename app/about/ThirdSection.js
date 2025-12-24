@@ -8,6 +8,7 @@ export default function ThirdSection() {
         <div className={styles.principles} >
             <h1 className={styles.principles__title} > Our Core Principles </h1>
             <div className={styles.principles__grid} >
+                
                 <div className={styles.principles__item} >
                     <div className={styles.principles__iconWrapper} >
                         <FiAward className={styles.principles__icon} />
@@ -26,7 +27,7 @@ export default function ThirdSection() {
                 </div>
 
                 {/* 3 */}
-                <div className={styles.principles__item}>
+                <div className={styles.principles__item}> 
                     <div className={styles.principles__iconWrapper}>
                         <LuLeaf className={styles.principles__icon} />
                     </div>

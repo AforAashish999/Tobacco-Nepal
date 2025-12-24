@@ -3,13 +3,23 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
+import { RxCross2 } from "react-icons/rx";
 
-export default function HamBurger ({ navItems }) {
+  const navItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Product', href: '/product' },
+    { label: 'About', href: '/about' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Contact', href: '/contact' },
+    { label: 'Gallery', href: '#', isDropdown: true }
+  ]
+
+export default function HamBurger ({onClose}) {
   const pathname = usePathname()
   const [isGalleryOpen, setIsGalleryOpen] = useState(false)
   const linkClass = path =>
     pathname === path
-      ? 'text-lg text-white font- inline-block w-full border-yellow-500 border-b-2   '
+      ? 'text-lg text-white font- inline-block w-full pb-1 border-yellow-500 border-b-2   '
       : 'text-white text-lg font- hover:text-[#eab308] '
   return (
     <div className='bg-[#1f1f1f] p-6 '>
@@ -49,7 +59,12 @@ export default function HamBurger ({ navItems }) {
                 )}
               </div>
             ) : (
-              <Link className={`${linkClass(item.href)} `} href={item.href}>
+              <Link 
+              onClick={() => {
+                setIsGalleryOpen(false)
+                onClose()
+              }}
+               className={`${linkClass(item.href)} `} href={item.href}>
                 {item.label}
               </Link>
             )}

@@ -2,7 +2,7 @@
 
 .hero{
 position:relative;
-height: 85vh;
+min-height: 85vh;
 width: 100%;
 background-image: url("/storyHero.webp");
 background-size: cover;
@@ -41,4 +41,17 @@ align-items: center;
     /* letter-spacing: 0.025em; */
     padding-top: 10px;
     line-height: 1.6;
+}
+
+@media (max-width: 378px){
+    .hero__title{
+        font-size: 50px;
+        text-shadow: 0px;
+    }
+    .hero__subtitle{
+    font-size: 20px;
+    max-width: 290px;
+    /* max-width: 300px; */
+   
+}
 }

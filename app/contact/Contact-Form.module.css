@@ -92,7 +92,6 @@
   background-color: #fdbe02;
 }
 
-/* RESPONSIVENESS - TABLET */
 @media (max-width: 768px) {
   .contact {
     background-color: #131313;
@@ -107,9 +106,19 @@
   }
 }
 
-/* RESPONSIVENESS - Mobile */
 @media(max-width:375px){
   .contact{
-   width: 375px;
+    width: 100%;
+    max-width: 345px;
+    padding: 30px 20px;
+  }
+  .contact__heading {
+    font-size: 26px;
+  }
+  .contact__subHeading {
+    font-size: 14px;
+  }
+  .contact__label {
+    font-size: 18px;
   }
 }

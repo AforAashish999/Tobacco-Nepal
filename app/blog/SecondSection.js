@@ -5,7 +5,7 @@ import Image from "next/image"
 import PostImage from "../../public/blog_article_image.webp"
 
 export default function SecondSection() {   
-  return (
+  return ( 
     <div className={styles.article} >
         <h1 className={styles.article__title} > Featured Articles </h1>
             <div className={styles.article__grid} >
@@ -41,12 +41,7 @@ export default function SecondSection() {
                     </Link>
                 </div>
             </div>
-            <div className={styles.article__item} >
-                2
-            </div>
-            <div className={styles.article__item}>
-                3
-            </div>
+
             </div>
     </div>
   )

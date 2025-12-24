@@ -6,14 +6,16 @@ import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect, useRef } from 'react'
 import GalleryPopUp from './GalleryPopUp'
-import { IoIosMenu } from "react-icons/io";
-import HamBurger from "./HamBurger.js"
-import { RxCross2 } from "react-icons/rx";
+import { IoIosMenu } from 'react-icons/io'
+import HamBurger from './HamBurger.js'
+import { RxCross2 } from 'react-icons/rx'
 
-export default function NavBar() {
+export default function NavBar () {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false)
-  const [isHamOpen, setIsHamOpen] = useState(false);
-  // const [hamIcon, setHamIcon] = useState(<IoIosMenu className='text-white text-3xl' />)
+  const [isHamOpen, setIsHamOpen] = useState(false)
+  // const [hamIcon, setHamIcon] = useState(
+  //   <IoIosMenu className='text-white text-3xl' />
+  // )
   const galleryRef = useRef(null)
   const pathname = usePathname()
   const navItems = [
@@ -25,15 +27,13 @@ export default function NavBar() {
     { label: 'Contact', href: '/contact' }
   ]
 
-  const linkClass = path =>
+  const linkClass = path =>  
     pathname === path
       ? 'border-b-2 border-[#EAB308] text-sm   '
       : 'text-white hover:text-yellow-400 text-sm'
 
   // close whenever the page changes
-  useEffect(() => (
-    setIsGalleryOpen(false)
-  ), [pathname])
+  useEffect(() => setIsGalleryOpen(false), [pathname])
 
   /*  click outside to close */
   useEffect(() => {
@@ -48,18 +48,13 @@ export default function NavBar() {
 
   return (
     <nav className='sticky  w-full top-0 z-500 bg-[#1f1f1f] lg:p-4 md:p-0 '>
-
       <div className=' relative w-full flex  justify-between p-4  items-center '>
         <Link className='relative w-25 h-14 hover:scale-105' href='/'>
-          <Image
-            src={Logo}
-            alt='Tobacco Nepal Logo'
-            fill
-          />
+          <Image src={Logo} alt='Tobacco Nepal Logo' fill />
         </Link>
 
         {/* NAVBAR FOR desktop */}
-        <div className='hidden flex-1 bg-red flex justify-between pl-72 ' >
+        <div className='hidden flex-1 bg-red lg:flex justify-between pl-72 '>
           <ul className='text-white  space-x-6 flex items-center'>
             {navItems.map(item => (
               <li key={item.label}>
@@ -71,10 +66,19 @@ export default function NavBar() {
                     <button
                       onClick={() => setIsGalleryOpen(prev => !prev)}
                       className={`flex items-center gap-1 cursor-pointer text-sm
-                           ${pathname === '/photogallery' || pathname === '/videogallery' ? 'border-b-2 border-yellow-500' : ''}`}
+                           ${
+                             pathname === '/photogallery' ||
+                             pathname === '/videogallery'
+                               ? 'border-b-2 border-yellow-500'
+                               : ''
+                           }`}
                     >
                       Gallery
-                      <MdOutlineKeyboardArrowDown className={`transition-transform ${isGalleryOpen ? 'rotate-180  ' : ''}`} />
+                      <MdOutlineKeyboardArrowDown
+                        className={`transition-transform ${
+                          isGalleryOpen ? 'rotate-180  ' : ''
+                        }`}
+                      />
                     </button>
 
                     {isGalleryOpen && (
@@ -101,39 +105,28 @@ export default function NavBar() {
         </div>
 
         {/* HAMBURGER FOR MOBILE */}
-        {/* <button
-          className=''
+        <button
+          className='lg:hidden'
           onClick={() => {
             setIsHamOpen(prev => !prev)
-            setHamIcon(<RxCross2 lassName='text-white text-3xl' />)
-          } } >
-             {hamIcon} 
-      
-        </button> */}
-         <button
-          className=''
-          onClick={() => {
-            setIsHamOpen(prev => !prev)
-           
-          } } >
-          <IoIosMenu className='text-white text-3xl' />
-      
+          }}
+        >
+           {
+              isHamOpen === true
+                ? <RxCross2 className='text-white text-3xl' />
+                : <IoIosMenu className='text-white text-3xl' />
+            }
         </button>
       </div>
 
-      {
-        isHamOpen &&
-        <div className='bg sticky top-22 w-full '>
-          <HamBurger navItems={navItems}  />
+      {isHamOpen && (
+        <div className='  bg sticky top-22 w-full '>
+          <HamBurger onClose={()=>setIsHamOpen(false)} />
         </div>
-
-      }
-
+      )}
     </nav>
-
   )
 }
-
 
 // /*
 // What changed:
@@ -149,4 +142,3 @@ export default function NavBar() {
 // This happens whether the user clicks Photo Gallery, Video Gallery, or any other navigation link
 
 // Now when you click on Photo or Video gallery links, the dropdown will close immediately as the page navigates! 🎉
-

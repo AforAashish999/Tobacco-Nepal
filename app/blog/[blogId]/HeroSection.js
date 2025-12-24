@@ -11,7 +11,7 @@ export default function HeroSection () {
       <div className={styles.hero__content}>
         <Link href='/blog' className={styles.hero__blogBtn}>
           <FiArrowLeft className={styles.hero__backIcon} />
-          <p className={styles.hero__prevText}> Back To Blog </p>  
+          <p className={styles.hero__prevText}> Back To Blog </p>    
         </Link>
 
         <h1 className={styles.hero__title}>

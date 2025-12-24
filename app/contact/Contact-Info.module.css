@@ -1,6 +1,6 @@
 .info {
   background-color: #141414;
-  width: 376.22;
+  width: 376.22px;
   padding: 40px;
   box-shadow: 0px 21px 20px -19px rgba(255, 255, 255, 0.35);
   border-radius: 10px;
@@ -14,12 +14,7 @@
 .info__itemWrapper {
   margin-bottom: 28px;
 }
-@media(max-width:768px){
-   .info{
-     width: 672.45px;
-     z-index: 300;
-   }
-}
+
 .info__item {
   color: #c28957;
   font-size: 20px;
@@ -41,3 +36,29 @@
 .info__icon {
   font-size: 40px;
 }
+
+@media(max-width:768px){
+  .info{
+    width: 100%;
+    max-width: 672.45px;
+    z-index: 300;
+  }
+}
+
+@media(max-width:375px){
+  .info{
+    width: 100%;
+    max-width: 345px;
+    padding: 30px 20px;
+  }
+  .info__heading {
+    font-size: 26px;
+  }
+  .info__item {
+    font-size: 18px;
+  }
+  .info__description {
+    font-size: 16px;
+  }
+}
+

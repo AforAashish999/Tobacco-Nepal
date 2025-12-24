@@ -70,7 +70,7 @@
   }
   .principles__grid {
     gap: 20px;
-    height: 5vh;
+    min-height: auto;
   }
   .principles__item {
     justify-content: center;
@@ -86,4 +86,18 @@
   .principles__description--wide {
     max-width: none;
   }
+}
+
+/* RESPONSIVENESS - MOBILE */
+@media (max-width: 378px) {
+  
+    .principles__grid{
+      /* width: 100%; */
+      grid-template-columns: repeat(1,1fr);
+       /* grid-template-rows: repeat(3, auto); */
+    }
+     .principles {
+    padding: 40px 0px;
+  }
+  
 }
