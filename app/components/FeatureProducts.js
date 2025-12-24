@@ -3,13 +3,14 @@ import { MdOutlineArrowRightAlt } from "react-icons/md";
 import Image from "next/image";
 
 export default async function FeatureProducts() {
-  const response = await fetch(`${process.env.API_URL}/products`);
+  const response = await fetch("https://productsbackend-0zfz.onrender.com/products");
   if (!response.ok) {
     throw new Error("Failed to fetch products");
   }
   const data = await response.json();
+  const allProducts = data?.products || []
 
-  const filteredProducts = data.slice(0, 5);
+  const filteredProducts = allProducts.slice(0, 5);
   return (
     <div className='min-h-screen bg-black md:px-8  py-15'>
 

@@ -8,7 +8,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 export default async function page({ params }) {
     const { productId } = await params;
-    const response = await fetch(`${process.env.API_URL}/products`);
+    const response = await fetch("https://productsbackend-0zfz.onrender.com/products");
 
     if (!response.ok) {
         console.error(" Aashish Error", response.status, response.statusText)

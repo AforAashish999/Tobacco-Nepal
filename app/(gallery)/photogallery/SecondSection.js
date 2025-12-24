@@ -24,16 +24,18 @@ export default function SecondSection() {
     if (category) {
         params.append("category", category)
     }
-    const url = `${process.env.NEXT_PUBLIC_API}/gallery${params.toString() ? `?${params.toString()}` : ''}`
+    const url = `https://productsbackend-0zfz.onrender.com/gallery${params.toString() ? `?${params.toString()}` : ''}`
     const { data, error, isLoading } = useSWR(url, fetcher);
     if (isLoading && !data)
         return <p>Page is loading................................</p>
     if (error) return <p>Error occured................{error.message} </p>
 
+    const allData = data?.gallery || []
+
      // Pagination logic
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const totalPages = Math.ceil(allData.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const paginatedData = data.slice(startIndex, startIndex + itemsPerPage);
+  const paginatedData = allData.slice(startIndex, startIndex + itemsPerPage);
 
   const pageNumbers = []
   for (let i = 1; i <= totalPages; i++) {

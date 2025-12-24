@@ -11,7 +11,7 @@ export default function SearchSort ({
   search,
   setSearch,
   sortOrder,
-  setSortOrder,
+  setSortOrder, 
   setCurrentPage
 }) {
   const [inputValue, setInputValue] = useState(search) // local state for input
@@ -53,6 +53,7 @@ export default function SearchSort ({
         </div>
 
         {/* SORT BOX */}
+        <div className='relative'>
         <div className='lg:w-36 bg-[#181818] rounded-xl border-yellow-300/40 border flex items-center p-3 '>
           <CgSortAz className='text-[#c99c15] text-3xl ' />
           <button
@@ -68,7 +69,7 @@ export default function SearchSort ({
 
         {isDropActive && (
           <div
-            className='text-white absolute cursor-pointer right-6 lg:right-2 top-37 lg:top-15  w-3/4 lg:w-32 bg-[#2d2d2d] border-yellow-300/40 border
+            className='text-white absolute cursor-pointer right-6 lg:right-1 top-12 lg:top-15  w-3/4 lg:w-32 bg-[#2d2d2d] border-yellow-300/40 border
             rounded-xl p-1 space-y-1 '
           >
             {dropItems.map(item => (
@@ -87,6 +88,8 @@ export default function SearchSort ({
             ))}
           </div>
         )}
+
+        </div>
       </div>
 
       {/* framer */}
