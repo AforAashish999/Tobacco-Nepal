@@ -8,9 +8,9 @@ export default async function FeatureProducts() {
     throw new Error("Failed to fetch products");
   }
   const data = await response.json();
-  const allProducts = data?.products || []
+  // const allProducts = data?.products || []
 
-  const filteredProducts = allProducts.slice(0, 5);
+  const filteredProducts = data.slice(0, 5);
   return (
     <div className='min-h-screen bg-black md:px-8  py-15'>
 

@@ -1,4 +1,0 @@
-Property	Meaning
-response.ok	true if the HTTP status is 200–299, otherwise false
-response.status	Numeric HTTP status code (e.g., 200, 404, 500)
-response.statusText	Text description of status (e.g., "OK", "Not Found")
