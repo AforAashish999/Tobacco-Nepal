@@ -108,7 +108,10 @@ export default function SearchSort ({
               >
                 <PiSortAscendingBold className='text-sm' />
                 <p>Sort: Oldest First </p>
-                <button onClick={() => setActive('Latest')}>
+                <button onClick={() => {
+                  setActive('Latest')
+                  setSortOrder('desc')
+                }}>
                   <IoClose className=' text-xs lg:text-lg cursor-pointer hover:text-[#e4a260] ' />
                 </button>
               </div>
