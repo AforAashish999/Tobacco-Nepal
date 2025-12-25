@@ -36,10 +36,10 @@ export default function FilterProducts() {
   ]
   const params = new URLSearchParams()
   if (category) params.append('category', category)
-  if (search) params.append('name_like', search.toLowerCase())
+  if (search) params.append('search', search.toLowerCase())
   //sorting
-  params.append('_sort', 'createdAt')
-  params.append('_order', sortOrder)  
+  params.append('sort', 'createdAt')
+  params.append('order', sortOrder)  
 
   const query = params.toString()
 
